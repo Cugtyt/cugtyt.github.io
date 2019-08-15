@@ -12,6 +12,12 @@
 
 ---
 
+## [**PC-DARTS: Partial Channel Connections for Memory-Efficient Differentiable Architecture Search**](https://cugtyt.github.io/blog/papers/2019/0815)
+
+> DARTS需要大量内存，PC-DARTS通过通道采样减少内存使用量，可以增大批量，提高速度
+
+---
+
 ## [**AutoML: A Survey of the State-of-the-Art**](https://cugtyt.github.io/blog/papers/2019/0814)
 
 > AutoML的综述
