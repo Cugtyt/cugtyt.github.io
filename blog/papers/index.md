@@ -12,6 +12,12 @@
 
 ---
 
+## [**AutoML: A Survey of the State-of-the-Art**](https://cugtyt.github.io/blog/papers/2019/0814)
+
+> AutoML的综述
+
+---
+
 ## [**Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science**](https://cugtyt.github.io/blog/papers/2019/0728)
 
 > TPOT，通过遗传算法自动化的探索管道，包括预处理，模型选择，参数设置等。
