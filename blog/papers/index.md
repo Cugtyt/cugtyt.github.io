@@ -12,6 +12,12 @@
 
 ---
 
+## [**SqueezeNAS: Fast neural architecture search for faster semantic segmentation**](https://cugtyt.github.io/blog/papers/2019/0816)
+
+> 用NAS做语义分割，1.不使用代理，MobileNetV3先搜索分类任务作为代理，SqueezeNAS直接搜索语义分割。 2.使用资源感知损失，直接优化目标平台上的延迟，而不是优化MAC指标，它对于运行速度没有必然关系
+
+---
+
 ## [**PC-DARTS: Partial Channel Connections for Memory-Efficient Differentiable Architecture Search**](https://cugtyt.github.io/blog/papers/2019/0815)
 
 > DARTS需要大量内存，PC-DARTS通过通道采样减少内存使用量，可以增大批量，提高速度
