@@ -12,6 +12,12 @@
 
 ---
 
+## [**混合精度训练**](https://cugtyt.github.io/blog/papers/20190830)
+
+> apex，fastai，pytorch_lightning混合精度训练
+
+---
+
 ## [**data_prefetcher提高数据加载速度**](https://cugtyt.github.io/blog/papers/20190829)
 
 > data_prefetcher提高数据加载速度，来自apex
