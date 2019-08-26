@@ -12,6 +12,12 @@
 
 ---
 
+## [**用C++加载Pytorch模型**](https://cugtyt.github.io/blog/papers/20190903)
+
+> 用C++加载Pytorch模型
+
+---
+
 ## [**使用TensorBoard**](https://cugtyt.github.io/blog/papers/20190902)
 
 > 使用TensorBoard做可视化分析
