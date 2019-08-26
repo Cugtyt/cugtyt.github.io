@@ -12,9 +12,15 @@
 
 ---
 
+## [**MoGA: Searching Beyond MobileNetV3**](https://cugtyt.github.io/blog/papers/2019/0821)
+
+> TODO
+
+---
+
 ## [**Searching for MobileNetV3**](https://cugtyt.github.io/blog/papers/2019/0819)
 
-> 搜索MobileNetV3,自动搜索算法和网络设计如何进行结合互补,
+> 搜索MobileNetV3,自动搜索算法和网络设计如何进行结合互补
 
 ---
 
