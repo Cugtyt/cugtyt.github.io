@@ -12,6 +12,12 @@
 
 ---
 
+## [**使用TensorBoard**](https://cugtyt.github.io/blog/papers/20190902)
+
+> 使用TensorBoard做可视化分析
+
+---
+
 ## [**控制自动求导autograd**](https://cugtyt.github.io/blog/papers/20190901)
 
 > requires_grad，torch.no_grad()，model.eval()
