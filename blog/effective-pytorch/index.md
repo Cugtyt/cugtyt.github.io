@@ -12,6 +12,12 @@
 
 ---
 
+## [**初始化**](https://cugtyt.github.io/blog/papers/20190828)
+
+> 模型参数初始化
+
+---
+
 ## [**保存和加载模型**](https://cugtyt.github.io/blog/papers/20190827)
 
 > 正确load和save
