@@ -12,6 +12,12 @@
 
 ---
 
+## [**保证可复现**](https://cugtyt.github.io/blog/effective-pytorch/20190904)
+
+> 设定随机数种子，cudnn.deterministic = True， cudnn.benchmark = False
+
+---
+
 ## [**用C++加载Pytorch模型**](https://cugtyt.github.io/blog/effective-pytorch/20190903)
 
 > 用C++加载Pytorch模型
