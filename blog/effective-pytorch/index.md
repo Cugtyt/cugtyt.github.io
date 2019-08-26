@@ -12,6 +12,12 @@
 
 ---
 
+## [**控制自动求导autograd**](https://cugtyt.github.io/blog/papers/20190901)
+
+> requires_grad，torch.no_grad()，model.eval()
+
+---
+
 ## [**更快的处理图像**](https://cugtyt.github.io/blog/papers/20190831)
 
 > fastai快速处理图像
