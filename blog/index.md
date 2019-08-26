@@ -8,6 +8,12 @@
 
 ---
 
+## [**Effective Pytorch *系列***](https://cugtyt.github.io/blog/effective-pytorch/index)
+
+> 高效使用Pytorch等相关工具
+
+---
+
 ## [**intv *系列***](https://cugtyt.github.io/blog/intv/index)
 
 > 算法笔记
