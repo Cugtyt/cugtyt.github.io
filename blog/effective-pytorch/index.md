@@ -12,6 +12,12 @@
 
 ---
 
+## [**data_prefetcher提高数据加载速度**](https://cugtyt.github.io/blog/papers/20190829)
+
+> data_prefetcher提高数据加载速度，来自apex
+
+---
+
 ## [**初始化**](https://cugtyt.github.io/blog/papers/20190828)
 
 > 模型参数初始化
