@@ -12,6 +12,12 @@
 
 ---
 
+## [**模型并行最佳实践**](https://cugtyt.github.io/blog/effective-pytorch/20190905)
+
+> 将不同的模块放到不同的GPU上，可以通过划分输入数据进行加速
+
+---
+
 ## [**保证可复现**](https://cugtyt.github.io/blog/effective-pytorch/20190904)
 
 > 设定随机数种子，cudnn.deterministic = True， cudnn.benchmark = False
