@@ -12,6 +12,12 @@
 
 ---
 
+## [**分布式数据并行**](https://cugtyt.github.io/blog/effective-pytorch/20190906)
+
+> 分布式数据并行的配置，以及如何和模型并行结合
+
+---
+
 ## [**模型并行最佳实践**](https://cugtyt.github.io/blog/effective-pytorch/20190905)
 
 > 将不同的模块放到不同的GPU上，可以通过划分输入数据进行加速
