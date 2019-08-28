@@ -12,6 +12,12 @@
 
 ---
 
+## [**Multinomial Distribution Learning for Effective Neural Architecture Search**](https://cugtyt.github.io/blog/papers/2019/0828)
+
+> MdeNAS是首个基于分布学习的NAS方法，基于新颖的性能指标假设可以进一步降低搜索时间
+
+---
+
 ## [**MoGA: Searching Beyond MobileNetV3**](https://cugtyt.github.io/blog/papers/2019/0821)
 
 > TODO
