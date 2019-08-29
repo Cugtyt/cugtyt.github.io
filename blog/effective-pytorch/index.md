@@ -12,6 +12,12 @@
 
 ---
 
+## [**imgaug图像增强**](https://cugtyt.github.io/blog/effective-pytorch/20190909)
+
+> 可以用于增强分类，目标检测，分割任务
+
+---
+
 ## [**DALI，加速视觉类数据读取**](https://cugtyt.github.io/blog/effective-pytorch/20190908)
 
 > DALI可以借助GPU提升视觉类数据的解码速度，可以替代深度学习框架中的数据加载模块
