@@ -12,6 +12,12 @@
 
 ---
 
+## [**pytorch-lightning工具**](https://cugtyt.github.io/blog/effective-pytorch/20190907)
+
+> 简化Pytorch代码结构，模块化模型训练，轻松处理复杂设置
+
+---
+
 ## [**分布式数据并行**](https://cugtyt.github.io/blog/effective-pytorch/20190906)
 
 > 分布式数据并行的配置，以及如何和模型并行结合
