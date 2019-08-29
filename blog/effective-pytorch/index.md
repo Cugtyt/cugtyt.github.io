@@ -12,6 +12,12 @@
 
 ---
 
+## [**DALI，加速视觉类数据读取**](https://cugtyt.github.io/blog/effective-pytorch/20190907)
+
+> DALI可以借助GPU提升视觉类数据的解码速度，可以替代深度学习框架中的数据加载模块
+
+---
+
 ## [**pytorch-lightning工具**](https://cugtyt.github.io/blog/effective-pytorch/20190907)
 
 > 简化Pytorch代码结构，模块化模型训练，轻松处理复杂设置
