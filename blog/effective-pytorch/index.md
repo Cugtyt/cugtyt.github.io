@@ -12,6 +12,12 @@
 
 ---
 
+## [**使用TorchScript部署模型**](https://cugtyt.github.io/blog/effective-pytorch/20190912)
+
+> 使用tracing和scripting部署seq2seq模型
+
+---
+
 ## [**使用numpy和scipy扩展Pytorch**](https://cugtyt.github.io/blog/effective-pytorch/20190911)
 
 > 使用numpy和scipy写Function
