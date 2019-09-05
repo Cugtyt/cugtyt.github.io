@@ -12,6 +12,12 @@
 
 ---
 
+## [**使用numpy和scipy扩展Pytorch**](https://cugtyt.github.io/blog/effective-pytorch/20190911)
+
+> 使用numpy和scipy写Function
+
+---
+
 ## [**介绍TorchScript**](https://cugtyt.github.io/blog/effective-pytorch/20190910)
 
 > TorchScript的作用和用法
