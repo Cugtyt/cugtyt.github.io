@@ -12,6 +12,13 @@
 
 ---
 
+## [**扩展torch.nn和torch.augograd**](https://cugtyt.github.io/blog/effective-pytorch/20190913)
+
+> 实现Function和Module
+
+---
+
+
 ## [**使用TorchScript部署模型**](https://cugtyt.github.io/blog/effective-pytorch/20190912)
 
 > 使用tracing和scripting部署seq2seq模型
