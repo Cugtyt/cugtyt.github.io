@@ -12,6 +12,12 @@
 
 ---
 
+## [**介绍TorchScript**](https://cugtyt.github.io/blog/effective-pytorch/20190910)
+
+> TorchScript的作用和用法
+
+---
+
 ## [**imgaug图像增强**](https://cugtyt.github.io/blog/effective-pytorch/20190909)
 
 > 可以用于增强分类，目标检测，分割任务
