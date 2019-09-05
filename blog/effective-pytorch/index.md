@@ -18,7 +18,7 @@
 
 ---
 
-## [**介绍TorchScript**](https://cugtyt.github.io/blog/effective-pytorch/20190910)
+## [**TorchScript的使用**](https://cugtyt.github.io/blog/effective-pytorch/20190910)
 
 > TorchScript的作用和用法
 
