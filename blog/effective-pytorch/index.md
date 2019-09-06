@@ -12,6 +12,12 @@
 
 ---
 
+## [**自定义C++运算扩展TorchScript**](https://cugtyt.github.io/blog/effective-pytorch/20190914)
+
+> 结合C++代码和TorchScript的基本流程
+
+---
+
 ## [**扩展torch.nn和torch.augograd**](https://cugtyt.github.io/blog/effective-pytorch/20190913)
 
 > 实现Function和Module
