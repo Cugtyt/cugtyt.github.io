@@ -12,6 +12,12 @@
 
 ---
 
+## [**卷积网络可视化**](https://cugtyt.github.io/blog/effective-pytorch/20190917)
+
+> pytorch-cnn-visualizations，flashtorch
+
+---
+
 ## [**图像数据增强工具**](https://cugtyt.github.io/blog/effective-pytorch/20190915)
 
 > imgaug, Augmentor
