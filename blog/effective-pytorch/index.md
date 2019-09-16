@@ -12,6 +12,12 @@
 
 ---
 
+## [**图像数据增强工具**](https://cugtyt.github.io/blog/effective-pytorch/20190915)
+
+> imgaug, Augmentor
+
+---
+
 ## [**自定义C++运算扩展TorchScript**](https://cugtyt.github.io/blog/effective-pytorch/20190914)
 
 > 结合C++代码和TorchScript的基本流程
@@ -23,7 +29,6 @@
 > 实现Function和Module
 
 ---
-
 
 ## [**使用TorchScript部署模型**](https://cugtyt.github.io/blog/effective-pytorch/20190912)
 
