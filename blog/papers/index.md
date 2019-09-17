@@ -12,6 +12,12 @@
 
 ---
 
+## [**DetNAS: Backbone Search for Object Detection**](https://cugtyt.github.io/blog/papers/2019/0903)
+
+> NAS用于搜索目标检测骨干网，3步：超网ImageNet预训练，超网目标检测微调，超网搜索
+
+---
+
 ## [**Progressive Differentiable Architecture Search: Bridging the Depth Gap between Search and Evaluation**](https://cugtyt.github.io/blog/papers/2019/0830)
 
 > 不断增大深度的DARTS
