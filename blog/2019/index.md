@@ -8,6 +8,12 @@
 
 ---
 
+## [**CMake基础教程**](https://cugtyt.github.io/blog/2019/0906)
+
+> cmake教程
+
+---
+
 ## [**A disocclusion inpainting framework for depth-based view synthesis**](https://cugtyt.github.io/blog/2019/0704)
 
 > 提出了去遮挡修复框架，可以用于基于深度的视图合成。包括四个模块：前景提取，动作补偿，改进的背景重构和修复。前景提取模块检测前景目标，并把他们从深度图和渲染视频中移除。动作补偿保证了背景重构模型适合移动相机的场景，改进的背景重构模块构建了稳定的背景视频，修复模块用于减少合成视图的空洞。
