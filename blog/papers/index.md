@@ -12,6 +12,12 @@
 
 ---
 
+## [**LARGE BATCH TRAINING OF CONVOLUTIONAL NET NETWORKS**](https://cugtyt.github.io/blog/papers/2019/0920)
+
+> 使用大批量会导致很低的模型准确率，提出LARS，根据梯度和权重的范数比，对不同的层使用不同的学习率
+
+---
+
 ## [**DetNAS: Backbone Search for Object Detection**](https://cugtyt.github.io/blog/papers/2019/0903)
 
 > NAS用于搜索目标检测骨干网，3步：超网ImageNet预训练，超网目标检测微调，超网搜索
