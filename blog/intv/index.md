@@ -12,6 +12,13 @@
 
 ---
 
+
+## [**百面机器学习——经典算法**](https://cugtyt.github.io/blog/intv/190924)
+
+> SVM，逻辑回归，决策树
+
+---
+
 ## [**Super Machine Learning Revision Notes**](https://cugtyt.github.io/blog/intv/190923)
 
 > 激活函数，初始化，SGD优化
