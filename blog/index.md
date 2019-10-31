@@ -5,6 +5,13 @@
 * Blog -> <https://cugtyt.github.io/blog/index>
 * Email -> <cugtyt@qq.com>, <cugtyt@gmail.com>
 * GitHub -> [Cugtyt@GitHub](https://github.com/Cugtyt)
+* 知乎 Cugtyt -> [https://www.zhihu.com/people/cugtyt/columns]
+
+---
+
+## [**论文笔记*系列***](https://cugtyt.github.io/blog/papers/index)
+
+> 阅读的一些论文
 
 ---
 
@@ -17,36 +24,6 @@
 ## [**intv *系列***](https://cugtyt.github.io/blog/intv/index)
 
 > 算法笔记
-
----
-
-## [**Udacity Deep RL *系列***](https://cugtyt.github.io/blog/udacity-deep-rl/index)
-
-> Udacity Deep RL代码理解，笔记
-
----
-
-## [**Crafting Your Research Future 笔记 *系列***](https://cugtyt.github.io/blog/CYRF/index)
-
-> 阅读《Crafting Your Research Future *A guide to Successful Master’s and Ph.D. Degrees in Science & engineering*》笔记
-
----
-
-## [**Kaggle*系列***](https://cugtyt.github.io/blog/kaggle/index)
-
-> 记录Kaggle上的尝试
-
----
-
-## [**论文笔记*系列***](https://cugtyt.github.io/blog/papers/index)
-
-> 阅读的一些论文
-
----
-
-## [**强化学习相关*系列***](https://cugtyt.github.io/blog/rl-notes/index)
-
-> 强化学习相关笔记
 
 ---
 
@@ -81,5 +58,29 @@
 ---
 
 ## [**Blogs of 2017**](https://cugtyt.github.io/blog/2017/index)
+
+---
+
+## [**Udacity Deep RL *系列***](https://cugtyt.github.io/blog/udacity-deep-rl/index)
+
+> Udacity Deep RL代码理解，笔记
+
+---
+
+## [**Crafting Your Research Future 笔记 *系列***](https://cugtyt.github.io/blog/CYRF/index)
+
+> 阅读《Crafting Your Research Future *A guide to Successful Master’s and Ph.D. Degrees in Science & engineering*》笔记
+
+---
+
+## [**Kaggle*系列***](https://cugtyt.github.io/blog/kaggle/index)
+
+> 记录Kaggle上的尝试
+
+---
+
+## [**强化学习相关*系列***](https://cugtyt.github.io/blog/rl-notes/index)
+
+> 强化学习相关笔记
 
 ---
