@@ -8,6 +8,12 @@
 
 ---
 
+## [**图直径**](https://cugtyt.github.io/blog/algo/2019/1102)
+
+> 通过BFS遍历图看作树的形式，通过一次遍历找到最深的节点，反向遍历得到最长的节点距离
+
+---
+
 ## [**Non-overlapping Intervals问题**](https://cugtyt.github.io/blog/algo/2018/0914)
 
 > 通过有序来统计交叉
