@@ -12,6 +12,11 @@
 
 ---
 
+## [**strcpy，memcpy，memmove， atoi 函数实现**](https://cugtyt.github.io/blog/intv/191111)
+
+> strcpy，memcpy，memmove， atoi 函数实现， 注意边界条件，注意区域重叠
+
+---
 
 ## [**百面机器学习——经典算法**](https://cugtyt.github.io/blog/intv/190924)
 
