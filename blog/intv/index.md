@@ -12,6 +12,12 @@
 
 ---
 
+## [**strcpy，memcpy，memmove， atoi 函数实现**](https://cugtyt.github.io/blog/intv/191112)
+
+> 哈希+双向链表，做到o(1)插入删除查找
+
+---
+
 ## [**strcpy，memcpy，memmove， atoi 函数实现**](https://cugtyt.github.io/blog/intv/191111)
 
 > strcpy，memcpy，memmove， atoi 函数实现， 注意边界条件，注意区域重叠
