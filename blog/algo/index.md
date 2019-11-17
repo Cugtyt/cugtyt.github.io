@@ -8,6 +8,18 @@
 
 ---
 
+## **剑指Offer系列**
+
+> [二维数组中的查找]((https://cugtyt.github.io/blog/algo/2019/1114))
+
+> [替换空格]((https://cugtyt.github.io/blog/algo/2019/1115))
+
+> [从尾到头打印链表]((https://cugtyt.github.io/blog/algo/2019/1116))
+
+> [重建二叉树]((https://cugtyt.github.io/blog/algo/2019/1117))
+
+---
+
 ## [**拼歌单 -- 多重背包转01背包**](https://cugtyt.github.io/blog/algo/2019/1105)
 
 > 计算动态规划表，转一维空间
