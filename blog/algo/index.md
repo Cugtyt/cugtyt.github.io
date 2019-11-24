@@ -10,13 +10,23 @@
 
 ## **剑指Offer系列**
 
-> [二维数组中的查找]((https://cugtyt.github.io/blog/algo/2019/1114))
+> [二维数组中的查找](https://cugtyt.github.io/blog/algo/2019/1114)
 
-> [替换空格]((https://cugtyt.github.io/blog/algo/2019/1115))
+> [替换空格](https://cugtyt.github.io/blog/algo/2019/1115)
 
-> [从尾到头打印链表]((https://cugtyt.github.io/blog/algo/2019/1116))
+> [从尾到头打印链表](https://cugtyt.github.io/blog/algo/2019/1116)
 
-> [重建二叉树]((https://cugtyt.github.io/blog/algo/2019/1117))
+> [重建二叉树](https://cugtyt.github.io/blog/algo/2019/1117)
+
+> [用栈实现队列](https://cugtyt.github.io/blog/algo/2019/1124)
+
+> [旋转数组的最小数字](https://cugtyt.github.io/blog/algo/2019/1125)
+
+> [斐波那契数列、跳台阶、矩形覆盖](https://cugtyt.github.io/blog/algo/2019/1126)
+
+> [变态跳台阶](https://cugtyt.github.io/blog/algo/2019/1126)
+
+> [二进制中1的个数](https://cugtyt.github.io/blog/algo/2019/1126)
 
 ---
 
