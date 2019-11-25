@@ -8,6 +8,12 @@
 
 ---
 
+## [**CNN图像分类改进方法**](https://cugtyt.github.io/blog/2019/1125)
+
+> 数据增强，训练技巧等
+
+---
+
 ## [**CMake基础教程**](https://cugtyt.github.io/blog/2019/0906)
 
 > cmake教程
