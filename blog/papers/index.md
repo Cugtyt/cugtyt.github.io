@@ -12,6 +12,12 @@
 
 ---
 
+## [**Billion-scale semi-supervised learning for image classification**](https://cugtyt.github.io/blog/papers/2019/1127)
+
+> teacher/student模型，有标签训练teacher，teacher标注无标签数据，无标签数据训练student，student在原始有标签数据微调
+
+---
+
 ## [**LARGE BATCH TRAINING OF CONVOLUTIONAL NET NETWORKS**](https://cugtyt.github.io/blog/papers/2019/0920)
 
 > 使用大批量会导致很低的模型准确率，提出LARS，根据梯度和权重的范数比，对不同的层使用不同的学习率
