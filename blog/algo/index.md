@@ -24,9 +24,23 @@
 
 > [斐波那契数列、跳台阶、矩形覆盖](https://cugtyt.github.io/blog/algo/2019/1126)
 
-> [变态跳台阶](https://cugtyt.github.io/blog/algo/2019/1126)
+> [变态跳台阶](https://cugtyt.github.io/blog/algo/2019/1127)
 
-> [二进制中1的个数](https://cugtyt.github.io/blog/algo/2019/1126)
+> [二进制中1的个数](https://cugtyt.github.io/blog/algo/2019/1128)
+
+> [数值的整数次方](https://cugtyt.github.io/blog/algo/2019/1130)
+
+> [调整数组顺序使奇数位于偶数前面](https://cugtyt.github.io/blog/algo/2019/1201)
+
+> [链表中倒数第k个结点](https://cugtyt.github.io/blog/algo/2019/1202)
+
+> [反转链表](https://cugtyt.github.io/blog/algo/2019/1203)
+
+> [合并两个排序的链表](https://cugtyt.github.io/blog/algo/2019/1204)
+
+> [树的子结构](https://cugtyt.github.io/blog/algo/2019/1205)
+
+> [二叉树的镜像](https://cugtyt.github.io/blog/algo/2019/1206)
 
 ---
 
