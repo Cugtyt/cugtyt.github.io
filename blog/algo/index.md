@@ -42,6 +42,18 @@
 
 > [二叉树的镜像](https://cugtyt.github.io/blog/algo/2019/1206)
 
+> [顺时针打印矩阵](https://cugtyt.github.io/blog/algo/2019/1207)
+
+> [包含min函数的栈](https://cugtyt.github.io/blog/algo/2019/1208)
+
+> [栈的压入、弹出序列](https://cugtyt.github.io/blog/algo/2019/1209)
+
+> [从上往下打印二叉树](https://cugtyt.github.io/blog/algo/2019/1210)
+
+> [二叉搜索树的后序遍历序列](https://cugtyt.github.io/blog/algo/2019/1211)
+
+> [二叉树中和为某一值的路径](https://cugtyt.github.io/blog/algo/2019/1212)
+
 ---
 
 ## [**拼歌单 -- 多重背包转01背包**](https://cugtyt.github.io/blog/algo/2019/1105)
