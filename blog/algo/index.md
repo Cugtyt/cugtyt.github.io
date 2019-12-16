@@ -24,9 +24,35 @@
 
 > [斐波那契数列、跳台阶、矩形覆盖](https://cugtyt.github.io/blog/algo/2019/1126)
 
-> [变态跳台阶](https://cugtyt.github.io/blog/algo/2019/1126)
+> [变态跳台阶](https://cugtyt.github.io/blog/algo/2019/1127)
 
-> [二进制中1的个数](https://cugtyt.github.io/blog/algo/2019/1126)
+> [二进制中1的个数](https://cugtyt.github.io/blog/algo/2019/1128)
+
+> [数值的整数次方](https://cugtyt.github.io/blog/algo/2019/1130)
+
+> [调整数组顺序使奇数位于偶数前面](https://cugtyt.github.io/blog/algo/2019/1201)
+
+> [链表中倒数第k个结点](https://cugtyt.github.io/blog/algo/2019/1202)
+
+> [反转链表](https://cugtyt.github.io/blog/algo/2019/1203)
+
+> [合并两个排序的链表](https://cugtyt.github.io/blog/algo/2019/1204)
+
+> [树的子结构](https://cugtyt.github.io/blog/algo/2019/1205)
+
+> [二叉树的镜像](https://cugtyt.github.io/blog/algo/2019/1206)
+
+> [顺时针打印矩阵](https://cugtyt.github.io/blog/algo/2019/1207)
+
+> [包含min函数的栈](https://cugtyt.github.io/blog/algo/2019/1208)
+
+> [栈的压入、弹出序列](https://cugtyt.github.io/blog/algo/2019/1209)
+
+> [从上往下打印二叉树](https://cugtyt.github.io/blog/algo/2019/1210)
+
+> [二叉搜索树的后序遍历序列](https://cugtyt.github.io/blog/algo/2019/1211)
+
+> [二叉树中和为某一值的路径](https://cugtyt.github.io/blog/algo/2019/1212)
 
 ---
 
