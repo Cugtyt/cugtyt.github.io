@@ -8,6 +8,12 @@
 
 ---
 
+## [**Pytorch模型转onnx转tensorflow pb，部署tensorflow serving，client测试**](https://cugtyt.github.io/blog/2019/1216)
+
+> 代码见<https://cugtyt.github.io/blog/2019/torch2pb.py>和<https://cugtyt.github.io/blog/2019/client.py>
+
+---
+
 ## [**Pseudo-Label 伪标签训练**](https://cugtyt.github.io/blog/2019/1127)
 
 > Pseudo-Label
