@@ -54,6 +54,10 @@
 
 > [二叉树中和为某一值的路径](https://cugtyt.github.io/blog/algo/2019/1212)
 
+> [数组中出现次数超过一半的数字](https://cugtyt.github.io/blog/algo/2019/1221)
+
+> [最小的K个数](https://cugtyt.github.io/blog/algo/2019/1225)
+
 ---
 
 ## [**拼歌单 -- 多重背包转01背包**](https://cugtyt.github.io/blog/algo/2019/1105)
