@@ -58,6 +58,14 @@
 
 > [最小的K个数](https://cugtyt.github.io/blog/algo/2019/1225)
 
+> [连续子数组的最大和](https://cugtyt.github.io/blog/algo/2019/1228)
+
+> [从1到n整数中1出现的次数](https://cugtyt.github.io/blog/algo/2019/1229)
+
+> [把数组排成最小的数](https://cugtyt.github.io/blog/algo/2019/1230)
+
+> [丑数](https://cugtyt.github.io/blog/algo/2019/1231)
+
 ---
 
 ## [**拼歌单 -- 多重背包转01背包**](https://cugtyt.github.io/blog/algo/2019/1105)
