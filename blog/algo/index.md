@@ -8,6 +8,18 @@
 
 ---
 
+## **leetcode系列**
+
+> [leetcode 6 旋转链表](https://cugtyt.github.io/blog/algo/2020/0101)
+
+> [leetcode 667 优美的排列 II](https://cugtyt.github.io/blog/algo/2020/0102)
+
+> [leetcode 1019 链表中的下一个更大节点](https://cugtyt.github.io/blog/algo/2020/0103)
+
+> [leetcode 1233 删除子文件夹](https://cugtyt.github.io/blog/algo/2020/0104)
+
+---
+
 ## **剑指Offer系列**
 
 > [二维数组中的查找](https://cugtyt.github.io/blog/algo/2019/1114)
