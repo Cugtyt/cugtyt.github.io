@@ -18,6 +18,10 @@
 
 > [leetcode 1233 删除子文件夹](https://cugtyt.github.io/blog/algo/2020/0104)
 
+> [leetcode 743 网络延迟时间](https://cugtyt.github.io/blog/algo/2020/0105)
+
+> [leetcode 785 判断二分图](https://cugtyt.github.io/blog/algo/2020/0106)
+
 ---
 
 ## **剑指Offer系列**
