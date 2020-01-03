@@ -28,6 +28,12 @@
 
 > [leetcode 1286 字母组合迭代器](https://cugtyt.github.io/blog/algo/2020/0109)
 
+> [leetcode 143 重排链表](https://cugtyt.github.io/blog/algo/2020/0110)
+
+> [leetcode 1054 距离相等的条形码](https://cugtyt.github.io/blog/algo/2020/0111)
+
+> [leetcode 199 二叉树的右视图](https://cugtyt.github.io/blog/algo/2020/0112)
+
 ---
 
 ## **剑指Offer系列**
