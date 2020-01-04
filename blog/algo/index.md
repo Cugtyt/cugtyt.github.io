@@ -40,6 +40,16 @@
 
 > [leetcode 1023 驼峰式匹配](https://cugtyt.github.io/blog/algo/2020/0116)
 
+> [leetcode 17 电话号码的字母组合](https://cugtyt.github.io/blog/algo/2020/0117)
+
+> [leetcode 946 验证栈序列](https://cugtyt.github.io/blog/algo/2020/0118)
+
+> [leetcode 851 喧闹和富有](https://cugtyt.github.io/blog/algo/2020/0119)
+
+> [leetcode 894 所有可能的满二叉树](https://cugtyt.github.io/blog/algo/2020/0120)
+
+> [leetcode 1053 交换一次的先前排列](https://cugtyt.github.io/blog/algo/2020/0121)
+
 ---
 
 ## **剑指Offer系列**
