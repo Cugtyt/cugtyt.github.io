@@ -60,6 +60,16 @@
 
 > [leetcode 96 不同的二叉搜索树](https://cugtyt.github.io/blog/algo/2020/0126)
 
+> [leetcode 213 打家劫舍 II](https://cugtyt.github.io/blog/algo/2020/0127)
+
+> [leetcode 300 最长上升子序列](https://cugtyt.github.io/blog/algo/2020/0128)
+
+> [leetcode 397 整数替换](https://cugtyt.github.io/blog/algo/2020/0129)
+
+> [leetcode 11 盛最多水的容器](https://cugtyt.github.io/blog/algo/2020/0130)
+
+> [leetcode 477 汉明距离总和](https://cugtyt.github.io/blog/algo/2020/0201)
+
 ---
 
 ## **剑指Offer系列**
