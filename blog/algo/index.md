@@ -50,6 +50,16 @@
 
 > [leetcode 1053 交换一次的先前排列](https://cugtyt.github.io/blog/algo/2020/0121)
 
+> [leetcode 763 划分字母区间](https://cugtyt.github.io/blog/algo/2020/0122)
+
+> [leetcode 63 不同路径 II](https://cugtyt.github.io/blog/algo/2020/0123)
+
+> [leetcode 72 编辑距离](https://cugtyt.github.io/blog/algo/2020/0124)
+
+> [leetcode 87 扰乱字符串](https://cugtyt.github.io/blog/algo/2020/0125)
+
+> [leetcode 96 不同的二叉搜索树](https://cugtyt.github.io/blog/algo/2020/0126)
+
 ---
 
 ## **剑指Offer系列**
