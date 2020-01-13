@@ -77,6 +77,19 @@
 > [leetcode 15 三数之和](https://cugtyt.github.io/blog/algo/2020/0204)
 
 > [leetcode 19 删除链表的倒数第N个节点](https://cugtyt.github.io/blog/algo/2020/0205)
+
+> [leetcode 4 寻找两个有序数组的中位数](https://cugtyt.github.io/blog/algo/2020/0206)
+
+> [leetcode 23 合并K个排序链表](https://cugtyt.github.io/blog/algo/2020/0207)
+
+> [leetcode 31 下一个排列](https://cugtyt.github.io/blog/algo/2020/0208)
+
+> [leetcode 32 最长有效括号](https://cugtyt.github.io/blog/algo/2020/0209)
+
+> [leetcode 33 搜索旋转排序数组](https://cugtyt.github.io/blog/algo/2020/0210)
+
+> [leetcode 34 在排序数组中查找元素的第一个和最后一个位置](https://cugtyt.github.io/blog/algo/2020/0211)
+
 ---
 
 ## **剑指Offer系列**
