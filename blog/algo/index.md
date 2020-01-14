@@ -90,6 +90,20 @@
 
 > [leetcode 34 在排序数组中查找元素的第一个和最后一个位置](https://cugtyt.github.io/blog/algo/2020/0211)
 
+> [leetcode 39 组合总和](https://cugtyt.github.io/blog/algo/2020/0212)
+
+> [leetcode 41 缺失的第一个正数](https://cugtyt.github.io/blog/algo/2020/0213)
+
+> [leetcode 46 全排列](https://cugtyt.github.io/blog/algo/2020/0214)
+
+> [leetcode 48 旋转图像](https://cugtyt.github.io/blog/algo/2020/0215)
+
+> [leetcode 53 最大子序和](https://cugtyt.github.io/blog/algo/2020/0216)
+
+> [leetcode 55 跳跃游戏](https://cugtyt.github.io/blog/algo/2020/0217)
+
+> [leetcode 56 合并区间](https://cugtyt.github.io/blog/algo/2020/0218)
+
 ---
 
 ## **剑指Offer系列**
