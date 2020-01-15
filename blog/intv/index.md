@@ -12,7 +12,13 @@
 
 ---
 
-## [**strcpy，memcpy，memmove， atoi 函数实现**](https://cugtyt.github.io/blog/intv/191112)
+## [**英语单词拼写检查**](https://cugtyt.github.io/blog/intv/200115)
+
+> trie数，编辑距离，优化空间时间
+
+---
+
+## [**LRU算法**](https://cugtyt.github.io/blog/intv/191112)
 
 > 哈希+双向链表，做到o(1)插入删除查找
 
