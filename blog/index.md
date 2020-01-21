@@ -27,15 +27,25 @@
 
 ---
 
-## [**机器学习和数据科学相关*系列***](https://cugtyt.github.io/blog/ml-data/index)
-
-> 一些关于机器学习、数据科学的算法和应用相关内容
-
----
-
 ## [**算法题目*系列***](https://cugtyt.github.io/blog/algo/index)
 
 > 做过的一些算法题目和练习
+
+---
+
+## [**Blogs of 2020**](https://cugtyt.github.io/blog/2020/index)
+
+---
+
+## [**Blogs of 2019**](https://cugtyt.github.io/blog/2019/index)
+
+---
+
+## [**Blogs of 2018**](https://cugtyt.github.io/blog/2018/index)
+
+---
+
+## [**Blogs of 2017**](https://cugtyt.github.io/blog/2017/index)
 
 ---
 
@@ -49,15 +59,9 @@
 
 ---
 
-## [**Blogs of 2019**](https://cugtyt.github.io/blog/2019/index)
+## [**机器学习和数据科学相关*系列***](https://cugtyt.github.io/blog/ml-data/index)
 
----
-
-## [**Blogs of 2018**](https://cugtyt.github.io/blog/2018/index)
-
----
-
-## [**Blogs of 2017**](https://cugtyt.github.io/blog/2017/index)
+> 一些关于机器学习、数据科学的算法和应用相关内容
 
 ---
 
@@ -82,5 +86,3 @@
 ## [**强化学习相关*系列***](https://cugtyt.github.io/blog/rl-notes/index)
 
 > 强化学习相关笔记
-
----
