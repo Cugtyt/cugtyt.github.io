@@ -174,6 +174,24 @@
 
 > [leetcode 297 二叉树的序列化与反序列化](https://cugtyt.github.io/blog/algo/2020/0324)
 
+> [leetcode 322 零钱兑换](https://cugtyt.github.io/blog/algo/2020/0325)
+
+> [leetcode 621 任务调度器](https://cugtyt.github.io/blog/algo/2020/0326)
+
+> [leetcode 560 和为K的子数组](https://cugtyt.github.io/blog/algo/2020/0327)
+
+> [leetcode 301 删除无效的括号](https://cugtyt.github.io/blog/algo/2020/0328)
+
+> [leetcode 309 最佳买卖股票时机含冷冻期](https://cugtyt.github.io/blog/algo/2020/0329)
+
+> [leetcode 312 戳气球](https://cugtyt.github.io/blog/algo/2020/0330)
+
+> [leetcode 337 打家劫舍 III](https://cugtyt.github.io/blog/algo/2020/0331)
+
+> [leetcode 338 比特位计数](https://cugtyt.github.io/blog/algo/2020/0401)
+
+> [leetcode 347 前 K 个高频元素](https://cugtyt.github.io/blog/algo/2020/0402)
+
 ---
 
 ## **剑指Offer系列**
