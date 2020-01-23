@@ -192,6 +192,26 @@
 
 > [leetcode 347 前 K 个高频元素](https://cugtyt.github.io/blog/algo/2020/0402)
 
+> [leetcode 394 字符串解码](https://cugtyt.github.io/blog/algo/2020/0403)
+
+> [leetcode 406 根据身高重建队列](https://cugtyt.github.io/blog/algo/2020/0404)
+
+> [leetcode 437 路径总和 III](https://cugtyt.github.io/blog/algo/2020/0405)
+
+> [leetcode 438 找到字符串中所有字母异位词](https://cugtyt.github.io/blog/algo/2020/0406)
+
+> [leetcode 448 找到所有数组中消失的数字](https://cugtyt.github.io/blog/algo/2020/0407)
+
+> [leetcode 494 目标和](https://cugtyt.github.io/blog/algo/2020/0408)
+
+> [leetcode 543 二叉树的直径](https://cugtyt.github.io/blog/algo/2020/0409)
+
+> [leetcode 581 最短无序连续子数组](https://cugtyt.github.io/blog/algo/2020/0410)
+
+> [leetcode 647 回文子串](https://cugtyt.github.io/blog/algo/2020/0411)
+
+> [leetcode 739 每日温度](https://cugtyt.github.io/blog/algo/2020/0412)
+
 ---
 
 ## **剑指Offer系列**
