@@ -212,6 +212,8 @@
 
 > [leetcode 739 每日温度](https://cugtyt.github.io/blog/algo/2020/0412)
 
+> [leetcode 416 分割等和子集](https://cugtyt.github.io/blog/algo/2020/0413)
+
 ---
 
 ## **剑指Offer系列**
