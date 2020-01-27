@@ -214,6 +214,20 @@
 
 > [leetcode 416 分割等和子集](https://cugtyt.github.io/blog/algo/2020/0413)
 
+> [leetcode 688 “马”在棋盘上的概率](https://cugtyt.github.io/blog/algo/2020/0414)
+
+> [leetcode 540 有序数组中的单一元素](https://cugtyt.github.io/blog/algo/2020/0415)
+
+> [leetcode 73 矩阵置零](https://cugtyt.github.io/blog/algo/2020/0416)
+
+> [leetcode 121 买卖股票的最佳时机](https://cugtyt.github.io/blog/algo/2020/0417)
+
+> [leetcode 678 有效的括号字符串](https://cugtyt.github.io/blog/algo/2020/0418)
+
+> [leetcode 331 验证二叉树的前序序列化](https://cugtyt.github.io/blog/algo/2020/0419)
+
+> [leetcode 1269 停在原地的方案数](https://cugtyt.github.io/blog/algo/2020/0420)
+
 ---
 
 ## **剑指Offer系列**
