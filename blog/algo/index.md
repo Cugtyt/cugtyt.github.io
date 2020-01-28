@@ -228,6 +228,22 @@
 
 > [leetcode 1269 停在原地的方案数](https://cugtyt.github.io/blog/algo/2020/0420)
 
+> [leetcode 29 两数相除](https://cugtyt.github.io/blog/algo/2020/0421)
+
+> [leetcode 257 二叉树的所有路径](https://cugtyt.github.io/blog/algo/2020/0422)
+
+> [leetcode 117 填充每个节点的下一个右侧节点指针 II](https://cugtyt.github.io/blog/algo/2020/0423)
+
+> [leetcode 16 最接近的三数之和](https://cugtyt.github.io/blog/algo/2020/0424)
+
+> [leetcode 765 情侣牵手](https://cugtyt.github.io/blog/algo/2020/0425)
+
+> [leetcode 1129 颜色交替的最短路径](https://cugtyt.github.io/blog/algo/2020/0426)
+
+> [leetcode 1071 字符串的最大公因子](https://cugtyt.github.io/blog/algo/2020/0427)
+
+> [leetcode 436 寻找右区间](https://cugtyt.github.io/blog/algo/2020/0428)
+
 ---
 
 ## **剑指Offer系列**
