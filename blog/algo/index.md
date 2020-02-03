@@ -282,6 +282,28 @@
 
 > [leetcode 154 寻找旋转排序数组中的最小值 II](https://cugtyt.github.io/blog/algo/2020/0517)
 
+> [leetcode 880 索引处的解码字符串](https://cugtyt.github.io/blog/algo/2020/0518)
+
+> [leetcode 89 格雷编码](https://cugtyt.github.io/blog/algo/2020/0519)
+
+> [leetcode 829 连续整数求和](https://cugtyt.github.io/blog/algo/2020/0520)
+
+> [leetcode 1268 搜索推荐系统](https://cugtyt.github.io/blog/algo/2020/0521)
+
+> [leetcode 1162 地图分析](https://cugtyt.github.io/blog/algo/2020/0522)
+
+> [leetcode 377 组合总和 Ⅳ](https://cugtyt.github.io/blog/algo/2020/0523)
+
+> [leetcode 1276 不浪费原料的汉堡制作方案](https://cugtyt.github.io/blog/algo/2020/0524)
+
+> [leetcode 82 删除排序链表中的重复元素 II](https://cugtyt.github.io/blog/algo/2020/0525)
+
+> [leetcode 539 最小时间差](https://cugtyt.github.io/blog/algo/2020/0526)
+
+> [leetcode 858 镜面反射](https://cugtyt.github.io/blog/algo/2020/0527)
+
+> [leetcode 756 金字塔转换矩阵](https://cugtyt.github.io/blog/algo/2020/0528)
+
 ---
 
 ## **剑指Offer系列**
