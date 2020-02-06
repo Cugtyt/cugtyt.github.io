@@ -12,6 +12,12 @@
 
 ---
 
+## [**AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks**](https://cugtyt.github.io/blog/papers/2020/0205)
+
+> AttnGAN多阶段文本生成细粒度图像。GAN网络从语句力度和词粒度控制整体和局部细节，DAMSM衡量文本和图像的匹配程度。
+
+---
+
 ## [**Billion-scale semi-supervised learning for image classification**](https://cugtyt.github.io/blog/papers/2019/1127)
 
 > teacher/student模型，有标签训练teacher，teacher标注无标签数据，无标签数据训练student，student在原始有标签数据微调
