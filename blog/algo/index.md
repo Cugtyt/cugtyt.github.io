@@ -326,6 +326,34 @@
 
 > [leetcode 310 最小高度树](https://cugtyt.github.io/blog/algo/2020/0608)
 
+> [leetcode 845 数组中的最长山脉](https://cugtyt.github.io/blog/algo/2020/0609)
+
+> [leetcode 812 最大三角形面积](https://cugtyt.github.io/blog/algo/2020/0610)
+
+> [leetcode 328 奇偶链表](https://cugtyt.github.io/blog/algo/2020/0611)
+
+> [leetcode 684 冗余连接](https://cugtyt.github.io/blog/algo/2020/0612)
+
+> [leetcode 685 冗余连接 II](https://cugtyt.github.io/blog/algo/2020/0613)
+
+> [leetcode 130 被围绕的区域](https://cugtyt.github.io/blog/algo/2020/0614)
+
+> [leetcode 399 除法求值](https://cugtyt.github.io/blog/algo/2020/0615)
+
+> [leetcode 48 单词替换](https://cugtyt.github.io/blog/algo/2020/0616)
+
+> [leetcode 212 单词搜索 II](https://cugtyt.github.io/blog/algo/2020/0617)
+
+> [leetcode 329 矩阵中的最长递增路径](https://cugtyt.github.io/blog/algo/2020/0618)
+
+> [leetcode 454 四数相加 II](https://cugtyt.github.io/blog/algo/2020/0619)
+
+> [leetcode 395 至少有K个重复字符的最长子串](https://cugtyt.github.io/blog/algo/2020/0620)
+
+> [leetcode 380 常数时间插入、删除和获取随机元素](https://cugtyt.github.io/blog/algo/2020/0621)
+
+> [leetcode 378 有序矩阵中第K小的元素](https://cugtyt.github.io/blog/algo/2020/0621)
+
 ---
 
 ## **剑指Offer系列**
