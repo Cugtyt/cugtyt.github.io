@@ -352,7 +352,63 @@
 
 > [leetcode 380 常数时间插入、删除和获取随机元素](https://cugtyt.github.io/blog/algo/2020/0621)
 
-> [leetcode 378 有序矩阵中第K小的元素](https://cugtyt.github.io/blog/algo/2020/0621)
+> [leetcode 378 有序矩阵中第K小的元素](https://cugtyt.github.io/blog/algo/2020/0622)
+
+> [leetcode 371 两整数之和](https://cugtyt.github.io/blog/algo/2020/0623)
+
+> [leetcode 334 递增的三元子序列](https://cugtyt.github.io/blog/algo/2020/0624)
+
+> [leetcode 326 3的幂](https://cugtyt.github.io/blog/algo/2020/0625)
+
+> [leetcode 324 摆动排序 II](https://cugtyt.github.io/blog/algo/2020/0626)
+
+> [leetcode 289 生命游戏](https://cugtyt.github.io/blog/algo/2020/0627)
+
+> [leetcode 268 缺失数字](https://cugtyt.github.io/blog/algo/2020/0628)
+
+> [leetcode 237 删除链表中的节点](https://cugtyt.github.io/blog/algo/2020/0629)
+
+> [leetcode 230 二叉搜索树中第K小的元素](https://cugtyt.github.io/blog/algo/2020/0630)
+
+> [leetcode 227 基本计算器 II](https://cugtyt.github.io/blog/algo/2020/0701)
+
+> [leetcode 204 计数质数](https://cugtyt.github.io/blog/algo/2020/0702)
+
+> [leetcode 190 颠倒二进制位](https://cugtyt.github.io/blog/algo/2020/0703)
+
+> [leetcode 189 旋转数组](https://cugtyt.github.io/blog/algo/2020/0704)
+
+> [leetcode 179 最大数](https://cugtyt.github.io/blog/algo/2020/0705)
+
+> [leetcode 172 阶乘后的零](https://cugtyt.github.io/blog/algo/2020/0706)
+
+> [leetcode 166 分数到小数](https://cugtyt.github.io/blog/algo/2020/0707)
+
+> [leetcode 162 寻找峰值](https://cugtyt.github.io/blog/algo/2020/0708)
+
+> [leetcode 150 逆波兰表达式求值](https://cugtyt.github.io/blog/algo/2020/0709)
+
+> [leetcode 131 分割回文串](https://cugtyt.github.io/blog/algo/2020/0710)
+
+> [leetcode 127 单词接龙](https://cugtyt.github.io/blog/algo/2020/0711)
+
+> [leetcode 8 字符串转换整数 (atoi)](https://cugtyt.github.io/blog/algo/2020/0712)
+
+> [leetcode 44 通配符匹配](https://cugtyt.github.io/blog/algo/2020/0713)
+
+> [leetcode 50 pow(x, n)](https://cugtyt.github.io/blog/algo/2020/0714)
+
+> [leetcode 54 螺旋矩阵](https://cugtyt.github.io/blog/algo/2020/0715)
+
+> [leetcode 91 解码方法](https://cugtyt.github.io/blog/algo/2020/0716)
+
+> [leetcode 03 二叉树的锯齿形层次遍历](https://cugtyt.github.io/blog/algo/2020/0717)
+
+> [leetcode 116 填充每个节点的下一个右侧节点指针](https://cugtyt.github.io/blog/algo/2020/0718)
+
+> [leetcode 107 二叉树的层次遍历 II](https://cugtyt.github.io/blog/algo/2020/0719)
+
+> [leetcode 210 课程表 II](https://cugtyt.github.io/blog/algo/2020/0720)
 
 ---
 
