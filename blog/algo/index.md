@@ -410,6 +410,22 @@
 
 > [leetcode 210 课程表 II](https://cugtyt.github.io/blog/algo/2020/0720)
 
+> [leetcode 面试题60 n个骰子的点数](https://cugtyt.github.io/blog/algo/2020/0721)
+
+> [leetcode 面试题59 - I 滑动窗口的最大值](https://cugtyt.github.io/blog/algo/2020/0722)
+
+> [leetcode 面试题59 - II 队列的最大值](https://cugtyt.github.io/blog/algo/2020/0723)
+
+> [leetcode 面试题49 丑数](https://cugtyt.github.io/blog/algo/2020/0724)
+
+> [leetcode 面试题48 最长不含重复字符的子字符串](https://cugtyt.github.io/blog/algo/2020/0725)
+
+> [leetcode 面试题57 II 和为s的连续正数序列](https://cugtyt.github.io/blog/algo/2020/0726)
+
+> [leetcode 面试题45 把数组排成最小的数](https://cugtyt.github.io/blog/algo/2020/0727)
+
+> [leetcode 面试题56-I 数组中数字出现的次数](https://cugtyt.github.io/blog/algo/2020/0728)
+
 ---
 
 ## **剑指Offer系列**
