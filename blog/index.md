@@ -15,6 +15,18 @@
 
 ---
 
+## [**算法题目*系列***](https://cugtyt.github.io/blog/algo/index)
+
+> 做过的一些算法题目和练习
+
+---
+
+## [**Effective Python *系列***](https://cugtyt.github.io/blog/effective-python/index)
+
+> 高效使用python
+
+---
+
 ## [**Effective Pytorch *系列***](https://cugtyt.github.io/blog/effective-pytorch/index)
 
 > 高效使用Pytorch等相关工具
@@ -24,12 +36,6 @@
 ## [**intv *系列***](https://cugtyt.github.io/blog/intv/index)
 
 > 算法笔记
-
----
-
-## [**算法题目*系列***](https://cugtyt.github.io/blog/algo/index)
-
-> 做过的一些算法题目和练习
 
 ---
 
