@@ -426,6 +426,14 @@
 
 > [leetcode 面试题56-I 数组中数字出现的次数](https://cugtyt.github.io/blog/algo/2020/0728)
 
+> [leetcode 面试题44 数字序列中某一位的数字](https://cugtyt.github.io/blog/algo/2020/0729)
+
+> [leetcode 面试题43 1～n整数中1出现的次数](https://cugtyt.github.io/blog/algo/2020/0730)
+
+> [leetcode 面试题38 字符串的排列](https://cugtyt.github.io/blog/algo/2020/0731)
+
+> [leetcode 面试题26 树的子结构](https://cugtyt.github.io/blog/algo/2020/0801)
+
 ---
 
 ## **剑指Offer系列**
