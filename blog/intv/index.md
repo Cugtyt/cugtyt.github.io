@@ -12,6 +12,18 @@
 
 ---
 
+## [**推导**](https://cugtyt.github.io/blog/intv/200223)
+
+> 一些数学公式
+
+---
+
+## [**GAN**](https://cugtyt.github.io/blog/intv/200222)
+
+> GAN相关内容
+
+---
+
 ## [**英语单词拼写检查**](https://cugtyt.github.io/blog/intv/200115)
 
 > trie数，编辑距离，优化空间时间
