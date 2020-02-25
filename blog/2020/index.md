@@ -8,6 +8,12 @@
 
 ---
 
+## [**粗暴去水印方法**](https://cugtyt.github.io/blog/2020/0225)
+
+> 提取HSV中V通道高的水印区域，膨胀操作，然后inpaint
+
+---
+
 ## [**D2L R-CNN系列**](https://cugtyt.github.io/blog/2020/0218)
 
 > RCNN系列
