@@ -12,6 +12,13 @@
 
 ---
 
+## [**Spatial Transformer Networks**](https://cugtyt.github.io/blog/papers/2020/0226)
+
+> learn the transform parameters to in the input feature map. For classification, It crops out and scale-normalizes the appropriate region, which simplify the subsequent task.
+
+---
+
+
 ## [**AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks**](https://cugtyt.github.io/blog/papers/2020/0205)
 
 > AttnGAN多阶段文本生成细粒度图像。GAN网络从语句力度和词粒度控制整体和局部细节，DAMSM衡量文本和图像的匹配程度。
