@@ -436,6 +436,24 @@
 
 > [leetcode 354 俄罗斯套娃信封问题](https://cugtyt.github.io/blog/algo/2020/0802)
 
+> [leetcode 面试题04.01 节点间通路](https://cugtyt.github.io/blog/algo/2020/0803)
+
+> [leetcode 面试题05.02 二进制数转字符串](https://cugtyt.github.io/blog/algo/2020/0804)
+
+> [leetcode 面试题08.11 硬币](https://cugtyt.github.io/blog/algo/2020/0805)
+
+> [leetcode 面试题17.13 恢复空格](https://cugtyt.github.io/blog/algo/2020/0806)
+
+> [leetcode 面试题17.17 多次搜索](https://cugtyt.github.io/blog/algo/2020/0807)
+
+> [leetcode 面试题04.06 后继者](https://cugtyt.github.io/blog/algo/2020/0808)
+
+> [leetcode 面试题04.12 求和路径](https://cugtyt.github.io/blog/algo/2020/0809)
+
+> [leetcode 面试题04.05 合法化二叉搜索树](https://cugtyt.github.io/blog/algo/2020/0810)
+
+> [leetcode 17.05 字母和数字](https://cugtyt.github.io/blog/algo/2020/0811)
+
 ---
 
 ## **剑指Offer系列**
