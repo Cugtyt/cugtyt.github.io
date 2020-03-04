@@ -454,6 +454,18 @@
 
 > [leetcode 17.05 字母和数字](https://cugtyt.github.io/blog/algo/2020/0811)
 
+> [leetcode 17.18 最短超串](https://cugtyt.github.io/blog/algo/2020/0812)
+
+> [leetcode 04.09 二叉搜索树序列](https://cugtyt.github.io/blog/algo/2020/0813)
+
+> [leetcode 08.06 汉诺塔问题](https://cugtyt.github.io/blog/algo/2020/0814)
+
+> [leetcode 86 字典序排数](https://cugtyt.github.io/blog/algo/2020/0815)
+
+> [leetcode 216 组合总和 III](https://cugtyt.github.io/blog/algo/2020/0816)
+
+> [leetcode 1104 二叉树寻路](https://cugtyt.github.io/blog/algo/2020/0817)
+
 ---
 
 ## **剑指Offer系列**
