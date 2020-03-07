@@ -12,12 +12,17 @@
 
 ---
 
+## [**A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications**](https://cugtyt.github.io/blog/papers/2020/0305)
+
+> reivew on GAN, objective function, application, etc.
+
+---
+
 ## [**Spatial Transformer Networks**](https://cugtyt.github.io/blog/papers/2020/0226)
 
 > learn the transform parameters to in the input feature map. For classification, It crops out and scale-normalizes the appropriate region, which simplify the subsequent task.
 
 ---
-
 
 ## [**AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks**](https://cugtyt.github.io/blog/papers/2020/0205)
 
