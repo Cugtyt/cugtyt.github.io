@@ -466,6 +466,16 @@
 
 > [leetcode 1104 二叉树寻路](https://cugtyt.github.io/blog/algo/2020/0817)
 
+> [leetcode 979 在二叉树中分配硬币](https://cugtyt.github.io/blog/algo/2020/0818)
+
+> [leetcode 1026 节点与其祖先之间的最大差值](https://cugtyt.github.io/blog/algo/2020/0819)
+
+> [leetcode 983 最低票价](https://cugtyt.github.io/blog/algo/2020/0820)
+
+> [leetcode 983 最低票价](https://cugtyt.github.io/blog/algo/2020/0821)
+
+> [leetcode 986 区间列表的交集](https://cugtyt.github.io/blog/algo/2020/0822)
+
 ---
 
 ## **剑指Offer系列**
