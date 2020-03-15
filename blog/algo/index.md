@@ -476,6 +476,24 @@
 
 > [leetcode 986 区间列表的交集](https://cugtyt.github.io/blog/algo/2020/0822)
 
+> [leetcode 面试题46 把数字翻译成字符串](https://cugtyt.github.io/blog/algo/2020/0823)
+
+> [牛客 牛牛的背包问题](https://cugtyt.github.io/blog/algo/2020/0824)
+
+> [牛客 鸡鸭分类问题](https://cugtyt.github.io/blog/algo/2020/0825)
+
+> [牛客 矩形重叠](https://cugtyt.github.io/blog/algo/2020/0826)
+
+> [牛客 爱吃喵粮的小招喵](https://cugtyt.github.io/blog/algo/2020/0827)
+
+> [牛客 推倒吧骨牌](https://cugtyt.github.io/blog/algo/2020/0828)
+
+> [牛客 扔鸡蛋](https://cugtyt.github.io/blog/algo/2020/0829)
+
+> [leetcode 1312 让字符串成为回文串的最少插入次数](https://cugtyt.github.io/blog/algo/2020/0830)
+
+> [leetcode 516 最长回文子序列 ](https://cugtyt.github.io/blog/algo/2020/0831)
+
 ---
 
 ## **剑指Offer系列**
