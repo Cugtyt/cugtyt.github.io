@@ -492,7 +492,13 @@
 
 > [leetcode 1312 让字符串成为回文串的最少插入次数](https://cugtyt.github.io/blog/algo/2020/0830)
 
-> [leetcode 516 最长回文子序列 ](https://cugtyt.github.io/blog/algo/2020/0831)
+> [leetcode 516 最长回文子序列](https://cugtyt.github.io/blog/algo/2020/0831)
+
+> [leetcode 40 组合总和 II](https://cugtyt.github.io/blog/algo/2020/0901)
+
+> [leetcode 39 组合总和](https://cugtyt.github.io/blog/algo/2020/0902)
+
+> [leetcode 25 K 个一组翻转链表](https://cugtyt.github.io/blog/algo/2020/0903)
 
 ---
 
