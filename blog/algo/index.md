@@ -500,6 +500,14 @@
 
 > [leetcode 25 K 个一组翻转链表](https://cugtyt.github.io/blog/algo/2020/0903)
 
+> [leetcode 1339 分裂二叉树的最大乘积](https://cugtyt.github.io/blog/algo/2020/0904)
+
+> [leetcode 132 分割回文串 II](https://cugtyt.github.io/blog/algo/2020/0905)
+
+> [leetcode 376 摆动序列](https://cugtyt.github.io/blog/algo/2020/0906)
+
+> [leetcode 650 只有两个键的键盘](https://cugtyt.github.io/blog/algo/2020/0907)
+
 ---
 
 ## **剑指Offer系列**
