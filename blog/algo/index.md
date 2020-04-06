@@ -472,7 +472,7 @@
 
 > [leetcode 983 最低票价](https://cugtyt.github.io/blog/algo/2020/0820)
 
-> [leetcode 983 最低票价](https://cugtyt.github.io/blog/algo/2020/0821)
+> [leetcode 1332 删除回文子序列](https://cugtyt.github.io/blog/algo/2020/0821)
 
 > [leetcode 986 区间列表的交集](https://cugtyt.github.io/blog/algo/2020/0822)
 
