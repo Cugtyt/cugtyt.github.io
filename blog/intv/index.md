@@ -12,6 +12,18 @@
 
 ---
 
+## [**为什么不能逻辑回归+平方损失**](https://cugtyt.github.io/blog/intv/200404)
+
+> 变得非凸，在分类错误和正确的情况下都会出现导数为0的情况
+
+---
+
+## [**统计学习方法**](https://cugtyt.github.io/blog/intv/200314)
+
+> 统计学习方法相关知识点
+
+---
+
 ## [**推导**](https://cugtyt.github.io/blog/intv/200223)
 
 > 一些数学公式
