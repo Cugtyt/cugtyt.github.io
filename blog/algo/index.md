@@ -508,6 +508,24 @@
 
 > [leetcode 650 只有两个键的键盘](https://cugtyt.github.io/blog/algo/2020/0907)
 
+> [leetcode 1028 从先序遍历还原二叉树](https://cugtyt.github.io/blog/algo/2020/0908)
+
+> [leetcode 57 插入区间](https://cugtyt.github.io/blog/algo/2020/0909)
+
+> [leetcode 1377 T 秒后青蛙的位置](https://cugtyt.github.io/blog/algo/2020/0910)
+
+> [leetcode 802 找到最终的安全状态](https://cugtyt.github.io/blog/algo/2020/0911)
+
+> [leetcode 1282 用户分组](https://cugtyt.github.io/blog/algo/2020/0912)
+
+> [leetcode 375 猜数字大小 II](https://cugtyt.github.io/blog/algo/2020/0913)
+
+> [leetcode 777 在LR字符串中交换相邻字符](https://cugtyt.github.io/blog/algo/2020/0914)
+
+> [leetcode 955 删列造序 II](https://cugtyt.github.io/blog/algo/2020/0915)
+
+> [leetcode 403 青蛙过河](https://cugtyt.github.io/blog/algo/2020/0916)
+
 ---
 
 ## **剑指Offer系列**
