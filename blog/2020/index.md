@@ -8,6 +8,12 @@
 
 ---
 
+## [**C++智能指针 - fluentcpp.com**](https://cugtyt.github.io/blog/2020/0507)
+
+> 智能指针，pimpl，自定义删除函数等
+
+---
+
 ## [**粗暴去水印方法**](https://cugtyt.github.io/blog/2020/0225)
 
 > 提取HSV中V通道高的水印区域，膨胀操作，然后inpaint
