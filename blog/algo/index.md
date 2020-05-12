@@ -530,6 +530,20 @@
 
 > [leetcode 450 删除二叉搜索树中的节点](https://cugtyt.github.io/blog/algo/2020/0918)
 
+> [leetcode 229 求众数 II](https://cugtyt.github.io/blog/algo/2020/0919)
+
+> [leetcode 878 第 N 个神奇数字](https://cugtyt.github.io/blog/algo/2020/0920)
+
+> [leetcode 357 计算各个位数不同的数字个数](https://cugtyt.github.io/blog/algo/2020/0921)
+
+> [leetcode 318 最大单词长度乘积](https://cugtyt.github.io/blog/algo/2020/0922)
+
+> [leetcode 672 灯泡开关 Ⅱ](https://cugtyt.github.io/blog/algo/2020/0923)
+
+> [leetcode 926 将字符串翻转到单调递增](https://cugtyt.github.io/blog/algo/2020/0924)
+
+> [leetcode 486 预测赢家](https://cugtyt.github.io/blog/algo/2020/0925)
+
 ---
 
 ## **剑指Offer系列**
