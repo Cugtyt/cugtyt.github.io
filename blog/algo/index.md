@@ -544,6 +544,20 @@
 
 > [leetcode 486 预测赢家](https://cugtyt.github.io/blog/algo/2020/0925)
 
+> [leetcode 854 相似度为 K 的字符串](https://cugtyt.github.io/blog/algo/2020/0926)
+
+> [leetcode 1140 石子游戏 II](https://cugtyt.github.io/blog/algo/2020/0927)
+
+> [leetcode 838 推多米诺](https://cugtyt.github.io/blog/algo/2020/0928)
+
+> [leetcode 984 不含 AAA 或 BBB 的字符串](https://cugtyt.github.io/blog/algo/2020/0929)
+
+> [leetcode 567 字符串的排列](https://cugtyt.github.io/blog/algo/2020/0930)
+
+> [leetcode 93 复原IP地址](https://cugtyt.github.io/blog/algo/2020/0901)
+
+> [leetcode 215 数组中的第K个最大元素](https://cugtyt.github.io/blog/algo/2020/0902)
+
 ---
 
 ## **剑指Offer系列**
