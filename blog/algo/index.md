@@ -554,9 +554,19 @@
 
 > [leetcode 567 字符串的排列](https://cugtyt.github.io/blog/algo/2020/0930)
 
-> [leetcode 93 复原IP地址](https://cugtyt.github.io/blog/algo/2020/0901)
+> [leetcode 93 复原IP地址](https://cugtyt.github.io/blog/algo/2020/1001)
 
-> [leetcode 215 数组中的第K个最大元素](https://cugtyt.github.io/blog/algo/2020/0902)
+> [leetcode 215 数组中的第K个最大元素](https://cugtyt.github.io/blog/algo/2020/1002)
+
+> [leetcode 142 环形链表 II](https://cugtyt.github.io/blog/algo/2020/1003)
+
+> [leetcode 122 买卖股票的最佳时机 II](https://cugtyt.github.io/blog/algo/2020/1004)
+
+> [leetcode 69 x 的平方根](https://cugtyt.github.io/blog/algo/2020/1005)
+
+> [leetcode 1 两数之和](https://cugtyt.github.io/blog/algo/2020/1006)
+
+> [Kick Start 2020 Round C 1 Countdown](https://cugtyt.github.io/blog/algo/2020/1007)
 
 ---
 
