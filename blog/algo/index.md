@@ -568,6 +568,10 @@
 
 > [Kick Start 2020 Round C 1 Countdown](https://cugtyt.github.io/blog/algo/2020/1007)
 
+> [leetcode 5 最长回文子串](https://cugtyt.github.io/blog/algo/2020/1008)
+
+> [leetcode 26 删除排序数组中的重复项](https://cugtyt.github.io/blog/algo/2020/1009)
+
 ---
 
 ## **剑指Offer系列**
