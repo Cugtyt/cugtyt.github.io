@@ -572,6 +572,8 @@
 
 > [leetcode 26 删除排序数组中的重复项](https://cugtyt.github.io/blog/algo/2020/1009)
 
+> [leetcode 16.18 模式匹配](https://cugtyt.github.io/blog/algo/2020/1010)
+
 ---
 
 ## **剑指Offer系列**
