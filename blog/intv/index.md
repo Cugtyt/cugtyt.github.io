@@ -12,6 +12,12 @@
 
 ---
 
+## [**k-means python实现**](https://cugtyt.github.io/blog/intv/200825)
+
+> python实现kmeans
+
+---
+
 ## [**为什么不能逻辑回归+平方损失**](https://cugtyt.github.io/blog/intv/200404)
 
 > 变得非凸，在分类错误和正确的情况下都会出现导数为0的情况

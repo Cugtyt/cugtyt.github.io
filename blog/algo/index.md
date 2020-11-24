@@ -574,6 +574,14 @@
 
 > [leetcode 16.18 模式匹配](https://cugtyt.github.io/blog/algo/2020/1010)
 
+> [leetcode 42 接雨水](https://cugtyt.github.io/blog/algo/2020/1011)
+
+> [leetcode 17.19 消失的两个数字](https://cugtyt.github.io/blog/algo/2020/1012)
+
+> [leetcode 260 只出现一次的数字 III](https://cugtyt.github.io/blog/algo/2020/1013)
+
+> [leetcode 343 整数拆分](https://cugtyt.github.io/blog/algo/2020/1014)
+
 ---
 
 ## **剑指Offer系列**
