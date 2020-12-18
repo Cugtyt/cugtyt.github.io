@@ -8,6 +8,12 @@
 
 ---
 
+## [**inkscape中svg转pdf半透明元素消失解决**](https://cugtyt.github.io/blog/2020/1218)
+
+> 智能指针，pimpl，自定义删除函数等
+
+---
+
 ## [**C++智能指针 - fluentcpp.com**](https://cugtyt.github.io/blog/2020/0507)
 
 > 智能指针，pimpl，自定义删除函数等
