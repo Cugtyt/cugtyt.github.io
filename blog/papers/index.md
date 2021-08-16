@@ -12,6 +12,12 @@
 
 ---
 
+## [**ENHANCING THE RELIABILITY OF OUT-OF-DISTRIBUTION IMAGE DETECTION IN NEURAL NETWORKS**](https://cugtyt.github.io/blog/papers/2020/1124)
+
+> ODIN，不需要修改预训练的网络，使用温度缩放和对输入添加扰动可以让分布内和分布外图像的softmax分数分布区分开来
+
+---
+
 ## [**A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications**](https://cugtyt.github.io/blog/papers/2020/0305)
 
 > reivew on GAN, objective function, application, etc.
