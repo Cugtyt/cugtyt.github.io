@@ -237,4 +237,248 @@ k8s有4个初始名字空间：
 * kube-public 自动创建，所有用户都可以读，主要集群使用，用于被整个集群可见
 * kube-node-lease 和每个节点关联的租用对象
 
-#### 
+#### 在请求时设置名字空间
+
+```
+kubectl run nginx --image=nginx --namespace=<insert-namespace-name-here>
+kubectl get pods --namespace=<insert-namespace-name-here>
+```
+
+设置名字空间偏好
+
+### 标签和选择器
+
+标签是附在对象上的键值对，用于标记对用户相关或有含义的标志属性，对系统本身来说是没有区别的。标签可以用于管理和选择对象的子集，可以在创建时添加或者随后添加，也可以随时更改。
+
+标签可以让用户已松耦合的方式组织系统对象，不需要客户端存储这些映射。
+
+通过标签选择器，用户可以指定对象的一个集合，标签选择器也是k8s中的核心聚合元语。现在API支持两种选择器：基于相等和基于集合。标签选择可以多维，使用都好分割。
+
+基于相等的：
+
+```
+environment = production
+tier != frontend
+environment=production,tier!=frontend
+```
+
+另一个用法是让Pod选定node，例如
+
+``` 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cuda-test
+spec:
+  containers:
+    - name: cuda-test
+      image: "k8s.gcr.io/cuda-vector-add:v0.1"
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+  nodeSelector:
+    accelerator: nvidia-tesla-p100
+```
+
+基于集合的操作有in，notin和exists，例如
+
+```
+environment in (production, qa)
+tier notin (frontend, backend)
+partition
+!partition
+```
+
+基于相等的例子：
+
+```
+kubectl get pods -l environment=production,tier=frontend
+```
+
+基于集合的例子：
+
+``` 
+kubectl get pods -l 'environment in (production),tier in (frontend)'
+```
+
+#### 服务和ReplicationController
+
+服务面向的pod集合是使用标签选择来定义的，ReplicationController选择的pods也是用标签选择来定义的。
+
+``` JSON
+"selector": {
+    "component" : "redis",
+}
+```
+
+``` yaml
+selector:
+    component: redis
+```
+
+``` yaml
+selector:
+  matchLabels:
+    component: redis
+  matchExpressions:
+    - {key: tier, operator: In, values: [cache]}
+    - {key: environment, operator: NotIn, values: [dev]}
+```
+
+### 标记
+
+标记可以在对象中附加一些信息，和标签类似：
+
+``` json
+"metadata": {
+  "annotations": {
+    "key1" : "value1",
+    "key2" : "value2"
+  }
+```
+
+这些标记的键值对都只能使用字符串。
+
+一些可以存在标记中的信息例子：
+* 由声明配置层管理的字段，附加这些字段可以和默认值进行区分。
+* 编译、发行或者镜像的信息，例如时间戳，发布id，分支，pr数，镜像hash，仓库地址。
+* 日志，监视器，分析和审计仓库的地址
+* 客户端库和工具信息，用于debug
+* 用户或者工具出处信息，例如其他系统组件的关联对象URL
+* 轻量试运行工具元数据，例如配置和检验点
+* 负责人的联系方式，项目组的网站
+* 用户修改的行为指令
+
+### 字段选择器
+
+可以做到以下查询：
+
+```
+metadata.name=my-service
+metadata.namespace!=default
+status.phase=Pending
+```
+
+`kubectl get pods --field-selector status.phase=Running`
+
+支持的字段：所有的k8s资源类型都支持metadata.name和metadata.namespace。对于不支持的字段，会产生错误：
+
+```
+kubectl get ingress --field-selector foo.bar=baz 
+
+Error from server (BadRequest): Unable to find "ingresses" that match label selector "", field selector "foo.bar=baz": "foo.bar" is not a known field selector: only "metadata.name", "metadata.namespace"
+```
+
+可以使用逗号分割多个选择进行串联，
+
+`kubectl get pods --field-selector=status.phase!=Running,spec.restartPolicy=Always`
+
+### Finalizers 终结器
+
+终结器是名字空间的键，告诉k8s等待条件满足后再删除资源，它提醒控制器清理对象所拥有的资源。在所有执行完成后，控制器会移除对应的终结器，当`meta.finalizers`字段为空的时候，k8s会认为删除完成。
+
+通常，终结器不需要指定执行代码，而是指定一些特定的资源键，类似于标记。k8s会自动具化代码。
+
+#### 终结器如何运作
+
+在创建一个配置文件时，你可以指定`metadata.finalizers`。当你尝试去删除资源时，控制器会注意到这些值在终结器中，它会：
+* 更改对象，添加`metadata.deletionTimestamp`字段为你开始删除的时间
+* 把对象设为只读，直到`metadata.finalizers`字段为空
+
+控制器会尝试满足删除器的要求，当要求满足后，控制器移除资源的`finalizers`中的键，在这个字段为空后，垃圾回收继续。
+
+一个例子是`kubernetes.io/pv-protection`，它可以防止误删除`PersistentVolume`对象，当`PersistentVolume`在Pod还使用的时候，k8s会添加`pv-protection`终结器。尝试删除`PersistentVolume`时，它会进入`Terminating `状态，但是控制器无法删除。在Pod停止使用`PersistentVolume`时，k8s清理`pv-protection`终结器，控制器删除它。
+
+### 所有者Owners和依赖Dependents
+
+一些对象时其他对象的所有者，例如ReplicaSet时一些Pods的所有者，这些Pod依赖于他们的所有者。
+
+所有者不同于标签和选择器，例如一个服务创建了`EndpointSlice`对象，这个服务使用标签来让控制面板决定哪些`EndpointSlice`在服务中使用。除了标签，每个`EndpointSlice`受服务的所有者引用管理，所有者引用让k8s防止干扰他们不能控制的对象。
+
+依赖对象有一个`metadata.ownerReferences`字段来引用他们的所有者对象。一个可用的所有者引用包括对象名字和UID。这些值由k8s自动设置所有对象为ReplicationSet，DaemonSet，Deployment，Jobs，CronJons和ReplicationController的值。你也可以自己手动更改这些值。
+
+依赖对象有一个`ownerReferences.blockOwnerDeletion`的字段，是一个布尔值，控制特定的依赖不让垃圾回收删除他们的拥有者对象。如果一个控制器设置了`metadata.ownerReferences`，k8s会自动把这个字段设置为true。也可以自己手动指定。
+
+### 推荐的标签
+
+![](figs/common-labels.png)
+
+``` yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: mysql-abcxzy
+    app.kubernetes.io/version: "5.7.21"
+    app.kubernetes.io/component: database
+    app.kubernetes.io/part-of: wordpress
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/created-by: controller-manager
+```
+
+考虑一个简单的使用Deployment和Service对象部署的无状态stateless服务。下面一个简单示例展示了标签的用法：
+
+``` yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: myservice
+    app.kubernetes.io/instance: myservice-abcxzy
+...
+```
+
+``` yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: myservice
+    app.kubernetes.io/instance: myservice-abcxzy
+...
+```
+
+考虑一个稍微复杂的应用：网页应用（WordPress）使用数据库（MySQL），使用Helm安装。
+
+``` yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: wordpress
+    app.kubernetes.io/instance: wordpress-abcxzy
+    app.kubernetes.io/version: "4.9.4"
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: wordpress
+...
+```
+
+``` yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: mysql-abcxzy
+    app.kubernetes.io/version: "5.7.21"
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/component: database
+    app.kubernetes.io/part-of: wordpress
+...
+```
+
+``` yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/instance: mysql-abcxzy
+    app.kubernetes.io/version: "5.7.21"
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/component: database
+    app.kubernetes.io/part-of: wordpress
+...
+```

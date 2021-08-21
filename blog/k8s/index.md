@@ -12,6 +12,12 @@
 
 ---
 
+## [*Concepts: Overview**](https://cugtyt.github.io/blog/kubernetes.io/concepts/overview.md)
+
+> Components, API, Objects
+
+---
+
 ## [**k8s basics**](https://cugtyt.github.io/blog/kubernetes.io/k8s_basics.md)
 
 > Cluster，Deploy，Service，Scaling，Rolling update
