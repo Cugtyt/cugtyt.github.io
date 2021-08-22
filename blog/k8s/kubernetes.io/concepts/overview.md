@@ -10,7 +10,7 @@
 
 ---
 
-来自[kubernetes.io文档](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+来自[kubernetes.io文档](https://kubernetes.io/docs/concepts/overview/)
 
 ![](figs/container_evolution.svg)
 ![](figs/components-of-kubernetes.svg)
