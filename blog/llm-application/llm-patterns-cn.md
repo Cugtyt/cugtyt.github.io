@@ -71,4 +71,7 @@
 
 ![](R/llm-patterns/rag-description.png)
 
+
+> 如果有用欢迎打赏
+
 ![](../buymeacoffee.jpg)

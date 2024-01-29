@@ -71,4 +71,6 @@ Use cases:
 
 ![](R/llm-patterns/rag-description.png)
 
+> Buy me a coffee
+
 ![](../buymeacoffee.jpg)
