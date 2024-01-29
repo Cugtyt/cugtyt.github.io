@@ -1,4 +1,4 @@
-# LLM Patterns
+# LLM 模式
 
 ## Contact me
 
