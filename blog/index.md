@@ -8,6 +8,12 @@
 
 ---
 
+## [**LLM Application*系列***](https://cugtyt.github.io/blog/llm-application/index)
+
+> 关于LLM的应用实践思考
+
+---
+
 ## [**论文笔记*系列***](https://cugtyt.github.io/blog/papers/index)
 
 > 阅读的一些论文
