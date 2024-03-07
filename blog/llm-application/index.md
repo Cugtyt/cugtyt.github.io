@@ -12,6 +12,12 @@
 
 ---
 
+## [**一个应用的Copilot要怎么做**](https://cugtyt.github.io/blog/llm-application/copilot-basic)
+
+> 简单介绍如何给一个应用做Copilot
+
+---
+
 ## [**LLM 做文档问答应用**](https://cugtyt.github.io/blog/llm-application/llm-doc-answer-application)
 
 > LLM具有很强的文字总结能力，结合文档检索可以做文档的智能问答，本文将介绍在微软内部的一些实践。
