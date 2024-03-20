@@ -12,6 +12,12 @@
 
 ---
 
+## [**软件实现Copilot的架构图**](https://cugtyt.github.io/blog/llm-application/copilot-arch)
+
+> 软件实现Copilot的架构图
+
+---
+
 ## [**一个应用的Copilot要怎么做**](https://cugtyt.github.io/blog/llm-application/copilot-basic)
 
 > 简单介绍如何给一个应用做Copilot
