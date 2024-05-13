@@ -12,6 +12,18 @@
 
 ---
 
+## [**Prompt Factory**](https://cugtyt.github.io/blog/llm-application/prompt-factory)
+
+> Prompt Factory help user to write prompt from provided samples
+
+> Writer generates prompt
+>
+> Actor practices prompt
+>
+> Critic evaluates prompt
+
+---
+
 ## [**软件实现Copilot的架构图**](https://cugtyt.github.io/blog/llm-application/copilot-arch)
 
 > 软件实现Copilot的架构图
