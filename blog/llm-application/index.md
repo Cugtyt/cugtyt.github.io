@@ -42,26 +42,26 @@
 
 ---
 
-## [**LLM Patterns - 中文**](https://cugtyt.github.io/blog/llm-application/llm-patterns-cn)
+## [**LLM Patterns - 中文**](https://cugtyt.github.io/blog/llm-application/llm-unit-cn)
 
-> Extractor 模式
+> Extractor 单元
 >
-> Composer 模式
+> Composer 单元
 >
-> Converter 模式
+> Converter 单元
 >
-> Router 模式
+> Router 单元
 
 ---
 
-## [**LLM Patterns**](https://cugtyt.github.io/blog/llm-application/llm-patterns)
+## [**LLM Patterns**](https://cugtyt.github.io/blog/llm-application/llm-unit)
 
-> Extractor pattern
+> Extractor unit
 >
-> Composer pattern
+> Composer unit
 >
-> Converter pattern
+> Converter unit
 >
-> Router pattern
+> Router unit
 
 ---

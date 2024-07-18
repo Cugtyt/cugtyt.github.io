@@ -1,4 +1,4 @@
-# LLM Patterns
+# LLM Unit
 
 ## Contact me
 
@@ -8,11 +8,11 @@
 
 ---
 
-![](R/llm-patterns/llmpatterns.jpg)
+![](R/llm-unit/llmunit.jpg)
 
 ## Extracter Pattern
 
-![](R/llm-patterns/extractor-pattern.png)
+![](R/llm-unit/extractor-unit.png)
 
 * Extract key points
 * Compress the information
@@ -28,7 +28,7 @@ Use cases:
 
 ## Composer Pattern
 
-![](R/llm-patterns/composer-pattern.png)
+![](R/llm-unit/composer-unit.png)
 
 * Generate new things
 * Extend the information
@@ -42,7 +42,7 @@ Use cases:
 
 ## Convertor Pattern
 
-![](R/llm-patterns/converter-pattern.png)
+![](R/llm-unit/converter-unit.png)
 
 * Extract and compose
 * Similar information in different domain
@@ -55,7 +55,7 @@ Use cases:
 
 ## Router Pattern
 
-![](R/llm-patterns/router-pattern.png)
+![](R/llm-unit/router-unit.png)
 
 * Select from the choices
 * Connect the natural language to the machine logic
@@ -69,7 +69,7 @@ Use cases:
 
 ## Examples
 
-![](R/llm-patterns/rag-description.png)
+![](R/llm-unit/rag-description.png)
 
 > Buy me a coffee
 

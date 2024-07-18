@@ -1,4 +1,4 @@
-# LLM 模式
+# LLM 单元
 
 ## Contact me
 
@@ -8,11 +8,11 @@
 
 ---
 
-![](R/llm-patterns/llmpatterns.jpg)
+![](R/llm-unit/llmunit.jpg)
 
-## Extracter 模式
+## Extracter 单元
 
-![](R/llm-patterns/extractor-pattern.png)
+![](R/llm-unit/extractor-unit.png)
 
 * 提取关键内容
 * 压缩信息量
@@ -26,9 +26,9 @@
 * 拼写检查
 * 意图理解和抽取
 
-## Composer 模式
+## Composer 单元
 
-![](R/llm-patterns/composer-pattern.png)
+![](R/llm-unit/composer-unit.png)
 
 * 生成新东西
 * 扩充信息量
@@ -40,9 +40,9 @@
 * 写诗，写邮件，写代码
 * 生成审阅内容
 
-## Convertor 模式
+## Convertor 单元
 
-![](R/llm-patterns/converter-pattern.png)
+![](R/llm-unit/converter-unit.png)
 
 * 提取+生成
 * 相似的信息在不同域进行转换
@@ -53,9 +53,9 @@
 * 模仿
 * 重写，重构
 
-## Router 模式
+## Router 单元
 
-![](R/llm-patterns/router-pattern.png)
+![](R/llm-unit/router-unit.png)
 
 * 基于选项做选择
 * 连接自然语言和机器逻辑
@@ -69,7 +69,7 @@
 
 ## 示例
 
-![](R/llm-patterns/rag-description.png)
+![](R/llm-unit/rag-description.png)
 
 
 > 如果有用欢迎打赏
