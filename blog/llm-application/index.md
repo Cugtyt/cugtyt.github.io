@@ -12,6 +12,16 @@
 
 ---
 
+## [**Manufacturer-Executor-Evaluator: A General LLM Agentic Pattern for Collective Intelligence**](https://cugtyt.github.io/blog/llm-application/mee)
+
+> * Manufacturer is responsible for generating the task specification based on the task examples, 
+> which is the system start point and objective,
+> * the Executor is responsible for executing the task based on the task specification, it is the final solution output,
+> * and the Evaluator is responsible for evaluating the execution result to make sure the task specification
+> meets the objective, feedback or comments from Evaluator will be used to improve the task specification in the next iteration.
+
+---
+
 ## [**Prompt Factory**](https://cugtyt.github.io/blog/llm-application/prompt-factory)
 
 > Prompt Factory help user to write prompt from provided samples
