@@ -12,6 +12,13 @@
 
 ---
 
+## [**Smart Diagnosis Solution**](https://cugtyt.github.io/blog/llm-application/smart-diagnosis)
+
+> Smart Diagnosis Solution, stack and layers
+
+---
+
+
 ## [**Manufacturer-Executor-Evaluator: A General LLM Agentic Pattern for Collective Intelligence**](https://cugtyt.github.io/blog/llm-application/mee)
 
 > * Manufacturer is responsible for generating the task specification based on the task examples, 
