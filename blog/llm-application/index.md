@@ -12,6 +12,15 @@
 
 ---
 
+## [**Process Supervision Is All You Need for AI Coding**](https://cugtyt.github.io/blog/llm-application/ai-coding-process)
+
+> Agent-based coding is increasingly popular in AI development,
+> but it often veers off course.
+> To achieve better results and minimize risks,
+> active supervision of the process is essential.
+
+---
+
 ## [**Massive Search: LLM Structured Outputs is All You Need**](https://cugtyt.github.io/blog/llm-application/massive-search)
 
 > Executing complex searches across entities with diverse attributes
