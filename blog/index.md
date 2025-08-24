@@ -10,6 +10,14 @@
 
 # 最近文章：
 
+## [**The Three-Stage Evolution of LLM Agents: From Learning to Creating**](https://cugtyt.github.io/blog/llm-application/agent-three-stage)
+
+> * **照猫画虎** (learning from data) - Foundation models trained on curated datasets
+> * **适应环境** (adapting to environment) - Agents with memory, tools, and planning capabilities  
+> * **改造环境** (transforming environment) - Creative agents that build tools and manufacture subagents
+
+---
+
 ## [**Process Supervision Is All You Need for AI Coding**](https://cugtyt.github.io/blog/llm-application/ai-coding-process)
 > Agent-based coding is increasingly popular in AI development,
 > but it often veers off course.
