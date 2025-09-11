@@ -12,6 +12,17 @@
 
 ---
 
+## [**The Three-Stage Evolution of LLM Agents: From Learning to Creating**](https://cugtyt.github.io/blog/llm-application/agentlauncher)
+
+> AgentLauncher GitHub: https://github.com/Cugtyt/agentlauncher
+>
+> AgentLauncher is an event-driven, multi-agent framework for solving complex tasks by dynamically generating sub-agents.
+> The main agent coordinates strategy, while sub-agents handle specialized tasks.
+> Agent lifecycles are managed automatically, similar to jobs in Kubernetes—sub-agents are lightweight and ephemeral.
+
+
+---
+
 ## [**The Three-Stage Evolution of LLM Agents: From Learning to Creating**](https://cugtyt.github.io/blog/llm-application/agent-three-stage)
 
 > * **照猫画虎** (learning from data) - Foundation models trained on curated datasets
