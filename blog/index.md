@@ -14,6 +14,7 @@
 ## [**LLM Generates Tokens, Agent Generates Messages, AgentLauncher Generates Agents**](https://cugtyt.github.io/blog/llm-application/agent-gen)
 
 > LLM generates tokens, Agent generates messages, AgentLauncher generates agents.
+
 ```
 function agent_life_cycle(system_message, user_message, llm_call, tool_call):
     conversation = [system_message, user_message]
