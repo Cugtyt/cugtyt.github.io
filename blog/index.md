@@ -10,6 +10,29 @@
 
 # 最近文章：
 
+
+## [**LLM Generates Tokens, Agent Generates Messages, AgentLauncher Generates Agents**](https://cugtyt.github.io/blog/llm-application/agent-gen)
+
+> LLM generates tokens, Agent generates messages, AgentLauncher generates agents.
+```
+function agent_life_cycle(system_message, user_message, llm_call, tool_call):
+    conversation = [system_message, user_message]
+    tool_set = [tool1, tool2, ...]
+
+    while True:
+        llm_output_messages = llm_call(conversation, tool_set)
+        conversation.extend(llm_output_messages)
+        if tool_call_message in llm_output_messages:
+            tool_result_message = tool_call(tool_call_message, tool_set)
+            conversation.append(tool_result_message)
+        else:
+            break
+    return conversation
+```
+
+---
+
+
 ## [**The Three-Stage Evolution of LLM Agents: From Learning to Creating**](https://cugtyt.github.io/blog/llm-application/agentlauncher)
 
 > AgentLauncher GitHub: https://github.com/Cugtyt/agentlauncher
