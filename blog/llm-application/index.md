@@ -12,6 +12,14 @@
 
 ---
 
+## [**AgentBase: Designing a Full-Agent Lifecycle with Factory, Runtime, and Observer**](https://cugtyt.github.io/blog/llm-application/agent-base)
+
+> 1. **AgentFactory** – constructs a runnable agent workflow from specs.
+> 2. **AgentRuntime** – executes the workflow on a concrete task input.
+> 3. **AgentObserver** – scores the outcome and feeds improvements back into the factory.
+
+---
+
 ## [**LLM Generates Tokens, Agent Generates Messages, AgentLauncher Generates Agents**](https://cugtyt.github.io/blog/llm-application/agent-gen)
 
 > LLM generates tokens, Agent generates messages, AgentLauncher generates agents.
