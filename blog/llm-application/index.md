@@ -12,6 +12,28 @@
 
 ---
 
+## [**Context Offload via Sub-Agent in LLM Applications**](https://cugtyt.github.io/blog/llm-application/context-offload-via-subagent)
+
+> In complex LLM applications, efficiently managing context and computational resources is crucial. While current practices often rely on offloading to external databases like file systems, this post explores a more elegant solution: **context offloading via sub-agent workflows**.
+
+```
+# Within the main agent's lifecycle
+if needs_specialized_handling:
+    # Dynamically create comprehensive instructions
+    subagent_instructions = craft_instructions_with_task_context(current_task)
+    
+    # Launch sub-agent with instructions and tools
+    subagent_result = launch_subagent(
+        instructions=subagent_instructions,
+        tools=selected_tools
+    )
+    
+    # Continue with condensed result
+    conversation.append(subagent_result)
+```
+
+---
+
 ## [**AgentBase: Designing a Full-Agent Lifecycle with Factory, Runtime, and Observer**](https://cugtyt.github.io/blog/llm-application/agent-base)
 
 > 1. **AgentFactory** – constructs a runnable agent workflow from specs.

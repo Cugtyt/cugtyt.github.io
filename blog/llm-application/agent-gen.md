@@ -1,7 +1,5 @@
 # LLM Generates Tokens, Agent Generates Messages, AgentLauncher Generates Agents
 
-Understanding the fundamental differences between these three components is crucial for building effective AI systems. Each operates at a different abstraction level, with distinct inputs and outputs that work together to create intelligent behavior.
-
 ## Contact Me
 
 - Blog: <https://cugtyt.github.io/blog/llm-application/index>
@@ -9,6 +7,8 @@ Understanding the fundamental differences between these three components is cruc
 - GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
 
 ---
+
+Understanding the fundamental differences between these three components is crucial for building effective AI systems. Each operates at a different abstraction level, with distinct inputs and outputs that work together to create intelligent behavior.
 
 ## LLM (Large Language Model)
 

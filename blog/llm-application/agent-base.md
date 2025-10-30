@@ -1,5 +1,13 @@
 # AgentBase: Designing a Full-Agent Lifecycle with Factory, Runtime, and Observer
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 Agent systems become easier to reason about when we break them into clean, reusable stages. Building on the ideas from “LLM Generates Tokens, Agent Generates Messages, AgentLauncher Generates Agents,” this post introduces **AgentBase**: a three-stage design pattern that stretches from agent creation to performance evaluation and back again.
 
 
