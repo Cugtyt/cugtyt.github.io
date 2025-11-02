@@ -26,6 +26,11 @@
 > At a high level, context is the input of an LLM, and memory is the historical context.
 > Using Git for context and memory management provides powerful version control and branching.
 
+* **read_context()**: read the current context from the context file
+* **update_context(new_context, commit_message)**: update the context file with new context and commit the changes with a commit message
+* **get_context_history()**: get the context history via Git log
+* **get_snapshot(version)**: get the context snapshot of a specific version via Git checkout
+
 ---
 
 ## [**Context Offload via Sub-Agent in LLM Applications**](https://cugtyt.github.io/blog/llm-application/context-offload-via-subagent)
