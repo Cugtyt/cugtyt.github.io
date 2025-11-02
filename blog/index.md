@@ -11,11 +11,10 @@
 # 最近文章：
 
 
-## [**AgentBase: Designing a Full-Agent Lifecycle with Factory, Runtime, and Observer**](https://cugtyt.github.io/blog/llm-application/agent-base)
+## [**Universally Manage Session Context and Memory via Git**](https://cugtyt.github.io/blog/llm-application/git-context-memory)
 
-> 1. **AgentFactory** – constructs a runnable agent workflow from specs.
-> 2. **AgentRuntime** – executes the workflow on a concrete task input.
-> 3. **AgentObserver** – scores the outcome and feeds improvements back into the factory.
+> At a high level, context is the input of an LLM, and memory is the historical context.
+> Using Git for context and memory management provides powerful version control and branching.
 
 ---
 
@@ -38,6 +37,14 @@ if needs_specialized_handling:
     # Continue with condensed result
     conversation.append(subagent_result)
 ```
+
+---
+
+## [**AgentBase: Designing a Full-Agent Lifecycle with Factory, Runtime, and Observer**](https://cugtyt.github.io/blog/llm-application/agent-base)
+
+> 1. **AgentFactory** – constructs a runnable agent workflow from specs.
+> 2. **AgentRuntime** – executes the workflow on a concrete task input.
+> 3. **AgentObserver** – scores the outcome and feeds improvements back into the factory.
 
 ---
 

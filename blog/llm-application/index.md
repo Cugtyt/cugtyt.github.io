@@ -12,6 +12,13 @@
 
 ---
 
+## [**Universally Manage Session Context and Memory via Git**](https://cugtyt.github.io/blog/llm-application/git-context-memory)
+
+> At a high level, context is the input of an LLM, and memory is the historical context.
+> Using Git for context and memory management provides powerful version control and branching.
+
+---
+
 ## [**Context Offload via Sub-Agent in LLM Applications**](https://cugtyt.github.io/blog/llm-application/context-offload-via-subagent)
 
 > In complex LLM applications, efficiently managing context and computational resources is crucial. While current practices often rely on offloading to external databases like file systems, this post explores a more elegant solution: **context offloading via sub-agent workflows**.
