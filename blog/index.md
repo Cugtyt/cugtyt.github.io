@@ -11,6 +11,18 @@
 # 最近文章：
 
 
+## [**Context Management for LLM Agent Systems**](https://cugtyt.github.io/blog/llm-application/context-management)
+
+> Effective context management is critical for maintaining performance, coherence, and scalability in complex LLM applications. This post presents an integrated approach combining three complementary strategies that work together to handle context at multiple levels—from real-time optimization to persistent memory.
+
+All three strategies are invoked by the LLM calling appropriate tools, with conversation management additionally triggered by system signals:
+
+* **Conversation Management**: Real-time optimization of active conversation to fit within LLM context window—LLM-triggered or system-forced when token limits exceeded
+* **Sub-Agent Offloading**: Delegates simple independent tasks to isolated, temporary agent instances—LLM decides when to offload
+* **Git Context Memory**: Persistent memory storage with version control for cross-session context—LLM calls tools to checkpoint and recall
+
+---
+
 ## [**Agentic Conversation Management**](https://cugtyt.github.io/blog/llm-application/conversation-manage)
 
 > We can use an Agent-based approach to manage conversations more intelligently, by giving the LLM tools to edit, summarize, or delete parts of the conversation as needed.
