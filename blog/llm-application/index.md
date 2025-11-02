@@ -12,10 +12,25 @@
 
 ---
 
+## [**Agentic Conversation Management**](https://cugtyt.github.io/blog/llm-application/conversation-manage)
+
+> We can use an Agent-based approach to manage conversations more intelligently, by giving the LLM tools to edit, summarize, or delete parts of the conversation as needed.
+
+* **edit_message(message_id, new_content)**: Edit a specific message in the conversation.
+* **delete_message(message_id)**: Remove a specific message from the conversation.
+* **summarize_messages(start_id, end_id)**: Summarize a range of messages into a concise form and replace them with the summary.
+
+---
+
 ## [**Universally Manage Session Context and Memory via Git**](https://cugtyt.github.io/blog/llm-application/git-context-memory)
 
 > At a high level, context is the input of an LLM, and memory is the historical context.
 > Using Git for context and memory management provides powerful version control and branching.
+
+* **read_context()**: read the current context from the context file
+* **update_context(new_context, commit_message)**: update the context file with new context and commit the changes with a commit message
+* **get_context_history()**: get the context history via Git log
+* **get_snapshot(version)**: get the context snapshot of a specific version via Git checkout
 
 ---
 
