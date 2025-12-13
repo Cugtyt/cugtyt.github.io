@@ -11,6 +11,18 @@
 # 最近文章：
 
 
+## [**Gnote: Extending Git Context and Memory Management with Vector Search**](https://cugtyt.github.io/blog/llm-application/gnote)
+
+> This post extends the Git-based context management approach by integrating vector search capabilities for semantic retrieval. Gnote provides dual search methods—keyword and vector-based—enabling both exact matching and semantic similarity searches across versioned context history.
+
+* **search_context_by_keywords(keywords)**: Returns Git commit references matching keyword criteria (exact or fuzzy text matching)
+* **search_context_by_vector(query_text)**: Converts query text to embeddings and returns Git commit references with semantic similarity
+* **Context Merging**: Online and offline strategies to condense search results and history
+* **Context Forgetting**: Time-based or relevance-based policies to prune old commits
+* **Alternative Implementation**: Custom in-memory data structure for performance-critical applications
+
+---
+
 ## [**Context Management for LLM Agent Systems**](https://cugtyt.github.io/blog/llm-application/context-management)
 
 > Effective context management is critical for maintaining performance, coherence, and scalability in complex LLM applications. This post presents an integrated approach combining three complementary strategies that work together to handle context at multiple levels—from real-time optimization to persistent memory.
