@@ -11,6 +11,17 @@
 # 最近文章：
 
 
+## [**From Prompts to SOPs: The Rise of Intelligence Engineering**](https://cugtyt.github.io/blog/llm-application/agent-intelligence-sop)
+
+> As base models become commoditized, the differentiation shifts to the agent layer. Intelligence Engineering is the discipline of designing SOPs (Standard Operating Procedures) that transform raw model intelligence into production-ready, scenario-specific solutions.
+
+* **Two Layers of Intelligence**: Model Layer (thinking) vs Agent Layer (doing)
+* **SOPs as the Core**: Tools + Instructions + Workflow + Success Criteria
+* **Standardized Runtime**: Portable SOPs across implementations via uniform agent lifecycle
+* **The Discipline**: Design, version control, test, and iterate SOPs as first-class engineering artifacts
+
+---
+
 ## [**Gnote: Extending Git Context and Memory Management with Vector Search**](https://cugtyt.github.io/blog/llm-application/gnote)
 
 > This post extends the Git-based context management approach by integrating vector search capabilities for semantic retrieval. Gnote provides dual search methods—keyword and vector-based—enabling both exact matching and semantic similarity searches across versioned context history.
