@@ -12,6 +12,19 @@
 
 ---
 
+## [**Agent Inference: The Shift from Model to Agent Optimization**](https://cugtyt.github.io/blog/llm-application/agent-inference)
+
+> When we talk about AI inference today, we mostly mean model inference—the infrastructure for making LLMs fast and efficient. But as agents become the basic unit of AI applications, the focus will shift to a higher abstraction layer: Agent Inference.
+
+* **Agent Role & Prompt Management**: Identity from system prompts, runtime injection, version control
+* **Tool Infrastructure & Distribution**: Package-like distribution (like npm), registry, routing, execution
+* **Memory Orchestration**: Conversation state, persistent storage, context window management
+* **Lifecycle Orchestration**: Standardized agent loop as first-class infrastructure
+* **Sub-Agent Delegation**: Dynamic launching, context isolation, unified infrastructure
+* **Skill Discovery & Distribution**: SOPs as packaged domain expertise, runtime loading, marketplace
+
+---
+
 ## [**From Prompts to SOPs: The Rise of Intelligence Engineering**](https://cugtyt.github.io/blog/llm-application/agent-intelligence-sop)
 
 > As base models become commoditized, the differentiation shifts to the agent layer. Intelligence Engineering is the discipline of designing SOPs (Standard Operating Procedures) that transform raw model intelligence into production-ready, scenario-specific solutions.
