@@ -12,6 +12,19 @@
 
 ---
 
+## [**Docs as Spec, Code as Status**](https://cugtyt.github.io/blog/llm-application/contract-evaluation)
+
+> AI coding makes implementation cheaper, so human supervision should move up:
+> define contracts and acceptance criteria, then use contract evaluation to
+> watch for drift.
+
+* **Code Moves Fast**: humans, agents, generated code, fixes, and refactors all change project state
+* **Contracts Drift**: specs and docs may exist, but they are not automatically enforced
+* **Watch Loop**: a read-only evaluator compares expected behavior with observed behavior
+* **Human Supervision**: humans design the acceptance surface and decide reconciliation
+
+---
+
 ## [**File-Based Orchestration for AI Agent Delegation**](https://cugtyt.github.io/blog/llm-application/file-based-agent-task-delegation)
 
 > When delegating work from one AI agent to another, the hard part is often coordination. A useful pattern is to represent each delegated task as a single Markdown task file that acts as both input, output, contract, and audit trail.
