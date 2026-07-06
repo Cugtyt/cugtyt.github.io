@@ -117,6 +117,11 @@ effort reading every generated line forever. As code generation becomes
 cheaper, line-by-line review becomes a weaker control surface. The stronger
 control surface is the contract.
 
+Contract evaluation is the guardrail around that control surface. It gives
+humans leverage to manage the project by shaping the contract and reviewing
+drift reports, instead of personally rediscovering every important behavior
+change from raw code.
+
 Humans are better used designing what behavior is acceptable, which interfaces
 are public, which examples must keep working, which compatibility promises
 matter, which architectural boundaries should not be crossed, and which risks
