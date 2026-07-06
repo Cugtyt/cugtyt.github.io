@@ -16,11 +16,11 @@
 
 > AI coding makes implementation cheaper, so human supervision should move up:
 > define contracts and acceptance criteria, then use contract evaluation to
-> watch for drift.
+> close the loop and watch for drift.
 
 * **Code Moves Fast**: humans, agents, generated code, fixes, and refactors all change project state
 * **Contracts Drift**: specs and docs may exist, but they are not automatically enforced
-* **Watch Loop**: a read-only evaluator compares expected behavior with observed behavior
+* **Closed Loop**: a read-only evaluator compares expected behavior with observed behavior
 * **Human Supervision**: humans design the acceptance surface and decide reconciliation
 
 ---
