@@ -11,7 +11,7 @@
 # 最近文章：
 
 
-## [**Docs as Spec, Code as Status**](https://cugtyt.github.io/blog/llm-application/contract-evaluation)
+## [**From Code Generation to Contract Reconciliation**](https://cugtyt.github.io/blog/llm-application/contract-evaluation)
 
 > AI coding makes implementation cheaper, so human supervision should move up:
 > define contracts and acceptance criteria, then use contract evaluation to
@@ -19,7 +19,7 @@
 
 * **Code Moves Fast**: humans, agents, generated code, fixes, and refactors all change project state
 * **Contracts Drift**: specs and docs may exist, but they are not automatically enforced
-* **Closed Loop**: a read-only evaluator compares expected behavior with observed behavior
+* **Closed Loop**: contract evaluation turns generation into a supervised reconciliation loop
 * **Human Supervision**: humans design the acceptance surface and decide reconciliation
 
 ---

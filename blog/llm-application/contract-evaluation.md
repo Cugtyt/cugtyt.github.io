@@ -1,4 +1,13 @@
-# Docs as Spec, Code as Status
+# From Code Generation to Contract Reconciliation
+
+> TL;DR: AI coding makes implementation cheap, but generation alone is an open
+> loop. Code changes from humans, agents, generated code, fixes, and refactors,
+> while contracts are often weakly enforced. Contract evaluation acts as the
+> watcher: it compares expected behavior with observed project state, reports
+> drift, and lets humans supervise reconciliation at the contract level.
+
+The core model is simple: **docs are spec, code is status, and contract
+evaluation closes the reconciliation loop.**
 
 AI coding makes implementation cheaper, and that changes the real bottleneck.
 When code was expensive to write, human review naturally focused on the code
@@ -14,9 +23,8 @@ The codebase becomes a fast-moving state machine. The problem is not only
 whether the latest patch works. The deeper problem is whether the current
 project still matches the contract it is supposed to satisfy.
 
-Generation alone is an open loop. It changes the project, but it does not
-systematically verify that the new project state still matches the expected
-contract. Without contract evaluation, AI coding does not close the loop.
+That is why generation needs a watcher. Without contract evaluation, AI coding
+changes project state without closing the loop.
 
 ## The Core Gap
 
@@ -89,9 +97,9 @@ and reconcile the system. Software development can use the same shape:
 | watch loop | contract evaluation |
 | reconciliation | code or contract updated under supervision |
 
-The contract evaluator is the watch mechanism. It links expected behavior to
-current project state, walks through the contract, observes the implementation,
-tests, examples, or runtime behavior, and reports drift:
+The contract evaluator is the watcher. It links expected behavior to current
+project state, walks through the contract, observes the implementation, tests,
+examples, or runtime behavior, and reports drift:
 
 ```text
 expected: /users/{id} requires id
@@ -109,6 +117,57 @@ enforceable, or clarify the contract because it was ambiguous.
 This is the closed loop: generation changes state, evaluation watches state
 against the contract, and supervised reconciliation brings the project back into
 alignment.
+
+## Designing Contracts for Evaluation
+
+A useful contract does not have to be perfect or fully formal. It only needs to
+make the important expectations visible enough to evaluate. The best time to
+write that contract is during design, before code generation begins. Instead of
+treating the design doc as background context, treat it as the future evaluation
+target: what must remain true, what examples must keep working, what
+compatibility promises matter, and which risks require human judgment.
+
+For a web API, that may be an OpenAPI spec plus a few example requests. For a
+CLI tool, it may be the README, `--help` output, exit-code rules, and golden
+examples. For a library, it may be public API docs, executable examples, and
+compatibility notes. For an infrastructure project, it may be policy rules,
+Terraform plans, runbooks, and architecture decisions.
+
+The evaluator should refer to this contract directly. It should not invent a
+parallel standard. Its job is to periodically compare the contract with the
+current project state and report drift.
+
+The common pattern is:
+
+```text
+expected contract
+        |
+        v
+observable project state
+        |
+        v
+drift report
+        |
+        v
+supervised reconciliation
+```
+
+Tests still matter. Static checks still matter. Code review still matters. But
+they become part of a larger supervision loop. The goal is not to replace
+engineering judgment. The goal is to give judgment a better object to inspect.
+
+The practice becomes:
+
+1. Design the contract.
+2. Define acceptance criteria.
+3. Make project behavior observable.
+4. Add a read-only contract evaluator that refers to the contract.
+5. Run it during review, before merge, in CI, or after major generated changes.
+6. Let humans decide how to reconcile drift.
+
+This turns a fast-moving codebase into something watchable. The project no
+longer relies only on humans noticing every important behavior change inside
+every patch.
 
 ## Human Supervision Moves Up
 
@@ -146,52 +205,6 @@ human supervises reconciliation
 
 This does not remove human responsibility. It moves human responsibility to the
 layer where it has the most leverage.
-
-## Designing Good Contracts
-
-A useful contract does not have to be perfect or fully formal. It only needs to
-make the important expectations visible enough to evaluate. For a web API, that
-may be an OpenAPI spec plus a few example requests. For a CLI tool, it may be
-the README, `--help` output, exit-code rules, and golden examples. For a
-library, it may be public API docs, executable examples, and compatibility
-notes. For an infrastructure project, it may be policy rules, Terraform plans,
-runbooks, and architecture decisions.
-
-The common pattern is:
-
-```text
-expected contract
-        |
-        v
-observable project state
-        |
-        v
-drift report
-        |
-        v
-supervised reconciliation
-```
-
-Tests still matter. Static checks still matter. Code review still matters. But
-they become part of a larger supervision loop. The goal is not to replace
-engineering judgment. The goal is to give judgment a better object to inspect.
-
-## The Practice
-
-For agentic development, the practical steps are simple:
-
-1. Write down the contract.
-2. Define acceptance criteria.
-3. Make project behavior observable.
-4. Add a read-only contract evaluator.
-5. Run it during review, before merge, or in CI.
-6. Let humans decide how to reconcile drift.
-
-This turns a fast-moving codebase into something watchable. The project no
-longer relies only on humans noticing every important behavior change inside
-every patch. Instead, humans define the expected behavior, agents help move the
-code, and contract evaluation watches whether the current state still matches
-the intent.
 
 That is the spec/status loop for AI coding:
 
