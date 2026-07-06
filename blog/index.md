@@ -11,6 +11,17 @@
 # 最近文章：
 
 
+## [**File-Based Orchestration for AI Agent Delegation**](https://cugtyt.github.io/blog/llm-application/file-based-agent-task-delegation)
+
+> When delegating work from one AI agent to another, the hard part is often coordination. A useful pattern is to represent each delegated task as a single Markdown task file that acts as both input, output, contract, and audit trail.
+
+* **One File Per Task**: A Markdown task file captures the task, constraints, expected result, validation, execution report, and final result
+* **Shared Source of Truth**: Both delegating and delegated agents coordinate through the same file instead of transient prompt exchanges
+* **Explicit Boundaries**: Constraints define what the delegated agent may inspect or modify
+* **Mandatory Validation**: The delegating agent remains responsible for reviewing the result before trusting it
+
+---
+
 ## [**Agent Inference: The Shift from Model to Agent Optimization**](https://cugtyt.github.io/blog/llm-application/agent-inference)
 
 > When we talk about AI inference today, we mostly mean model inference—the infrastructure for making LLMs fast and efficient. But as agents become the basic unit of AI applications, the focus will shift to a higher abstraction layer: Agent Inference.

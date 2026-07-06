@@ -12,6 +12,17 @@
 
 ---
 
+## [**File-Based Orchestration for AI Agent Delegation**](https://cugtyt.github.io/blog/llm-application/file-based-agent-task-delegation)
+
+> When delegating work from one AI agent to another, the hard part is often coordination. A useful pattern is to represent each delegated task as a single Markdown task file that acts as both input, output, contract, and audit trail.
+
+* **One File Per Task**: A Markdown task file captures the task, constraints, expected result, validation, execution report, and final result
+* **Shared Source of Truth**: Both delegating and delegated agents coordinate through the same file instead of transient prompt exchanges
+* **Explicit Boundaries**: Constraints define what the delegated agent may inspect or modify
+* **Mandatory Validation**: The delegating agent remains responsible for reviewing the result before trusting it
+
+---
+
 ## [**Agent Inference: The Shift from Model to Agent Optimization**](https://cugtyt.github.io/blog/llm-application/agent-inference)
 
 > When we talk about AI inference today, we mostly mean model inference—the infrastructure for making LLMs fast and efficient. But as agents become the basic unit of AI applications, the focus will shift to a higher abstraction layer: Agent Inference.
@@ -91,13 +102,13 @@ All three strategies are invoked by the LLM calling appropriate tools, with conv
 if needs_specialized_handling:
     # Dynamically create comprehensive instructions
     subagent_instructions = craft_instructions_with_task_context(current_task)
-    
+
     # Launch sub-agent with instructions and tools
     subagent_result = launch_subagent(
         instructions=subagent_instructions,
         tools=selected_tools
     )
-    
+
     # Continue with condensed result
     conversation.append(subagent_result)
 ```
@@ -147,7 +158,7 @@ function agent_life_cycle(system_message, user_message, llm_call, tool_call):
 ## [**The Three-Stage Evolution of LLM Agents: From Learning to Creating**](https://cugtyt.github.io/blog/llm-application/agent-three-stage)
 
 > * **照猫画虎** (learning from data) - Foundation models trained on curated datasets
-> * **适应环境** (adapting to environment) - Agents with memory, tools, and planning capabilities  
+> * **适应环境** (adapting to environment) - Agents with memory, tools, and planning capabilities
 > * **改造环境** (transforming environment) - Creative agents that build tools and manufacture subagents
 
 ---
@@ -169,7 +180,7 @@ function agent_life_cycle(system_message, user_message, llm_call, tool_call):
 > potentially involving joins across multiple data sources.
 > For example, searching for a book might involve filtering by its title,
 > description, price, user comments, and cover image simultaneously.
-> 
+>
 > Massive Search provides a method for querying such complex
 > but logically grouped data by leveraging LLM Structured Outputs.
 > "Logically grouped" means all the data pertains to the same core entity,
@@ -186,7 +197,7 @@ function agent_life_cycle(system_message, user_message, llm_call, tool_call):
 
 ## [**Manufacturer-Executor-Evaluator: A General LLM Agentic Pattern for Collective Intelligence**](https://cugtyt.github.io/blog/llm-application/mee)
 
-> * Manufacturer is responsible for generating the task specification based on the task examples, 
+> * Manufacturer is responsible for generating the task specification based on the task examples,
 > which is the system start point and objective,
 > * the Executor is responsible for executing the task based on the task specification, it is the final solution output,
 > * and the Evaluator is responsible for evaluating the execution result to make sure the task specification
