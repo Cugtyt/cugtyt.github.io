@@ -11,6 +11,19 @@
 # 最近文章：
 
 
+## [**Observability and Manipulability: The Eyes and Hands of Self-Improving Harnesses**](https://cugtyt.github.io/blog/llm-application/observability-manipulability-for-self-improving-harness)
+
+> The core work of designing a self-improving harness is defining its
+> observation and manipulation interfaces. The observation interface reveals
+> the improvement target; the manipulation interface defines the action space.
+
+* **Observability**: Threads, traces, logs, tests, and feedback expose repeated behavior and its causes
+* **Manipulability**: Skills, scripts, tools, prompts, and workflows define the editable action space
+* **Retrospective Skill**: Recent Codex threads become evidence for improving the next period of work
+* **Bounded Improvement**: Permissions, evaluation, regression checks, and rollback keep changes grounded
+
+---
+
 ## [**From Code Generation to Contract Reconciliation**](https://cugtyt.github.io/blog/llm-application/contract-evaluation)
 
 > AI coding makes implementation cheaper, so human supervision should move up:
