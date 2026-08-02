@@ -10,6 +10,16 @@
 
 # 最近文章：
 
+## [**Agentic Contract Testing**](https://cugtyt.github.io/blog/llm-application/agentic-contract-testing)
+
+> An agentic contract test turns a human-readable project promise into a bounded evaluation. Humans define what must hold and what coverage matters; an agent chooses how to investigate within a controlled harness.
+
+* **Human-Authored Intent**: State the project promise and bound where it applies
+* **Adaptive Evaluation**: Agents choose how to inspect source, dependencies, configuration, and runtime behavior
+* **Reviewable Results**: Failures include evidence, while passes are supported by coverage observations
+* **Controlled Execution**: A harness constrains tools, permissions, isolation, and budgets
+
+---
 
 ## [**Observability and Manipulability: The Eyes and Hands of Self-Improving Harnesses**](https://cugtyt.github.io/blog/llm-application/observability-manipulability-for-self-improving-harness)
 
