@@ -12,6 +12,17 @@
 
 ---
 
+## [**Archive and Link: The Core of Agent Context Management**](https://cugtyt.github.io/blog/llm-application/archive-and-link-context-management)
+
+> Archive past context into durable, manipulable artifacts, and link the current context to the relevant parts of that archive. Session compaction and memory generation build on these two responsibilities.
+
+* **Archive**: Session files, ordered messages, tool results, and state notes preserve past context
+* **Link**: References, descriptive hints, and search, recall, and read tools connect the present to the past
+* **Eyes and Hands**: Archiving creates a manipulation surface; linking makes archived context observable
+* **Continuity**: Compaction and memory retain useful state with paths back to supporting evidence
+
+---
+
 ## [**Agentic Contract Testing**](https://cugtyt.github.io/blog/llm-application/agentic-contract-testing)
 
 > An agentic contract test turns a human-readable project promise into a bounded evaluation. Humans define what must hold and what coverage matters; an agent chooses how to investigate within a controlled harness.
