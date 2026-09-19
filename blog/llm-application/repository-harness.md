@@ -8,14 +8,15 @@ outside the files its author intended to affect.
 
 A repository harness is the infrastructure that helps us control those changes:
 contributor instructions, specs, scripts, tests, and review workflows. This post
-proposes three practices for building one: **deliver specs with substantive code
-changes, maintain explicit references when specified behavior changes, and
-regularly check the whole repository against its contracts.**
+proposes four practices for building one: **deliver specs with substantive code
+changes, maintain explicit references when specified behavior changes, regularly
+check the whole repository against its contracts, and make review a repeatable
+repository-owned workflow.**
 
 These are starting points for an evolving approach. The aim is guidance that a
 service, library, CLI, or application can adopt using its existing tools.
-DeepSeek Harness (DSH) supplies several concrete examples, especially its Agent
-Notes and documentation checks.
+DeepSeek Harness (DSH) supplies several concrete examples through its Agent
+Notes, documentation checks, and code review skill.
 
 ## 1. Deliver the Spec, Code, and Tests Together
 
@@ -66,6 +67,7 @@ Discard partial output: rejected because it removes useful failure evidence.
 ## Acceptance criteria
 Cancel before spawn: no child is launched and wait settles as cancelled.
 Cancel during execution: the child exits before stop resolves.
+Cancel after output: the final result retains all output captured before exit.
 Child traps the signal and exits zero: cancellation remains visible.
 Stop after completion: the original result is returned unchanged.
 ```
@@ -81,10 +83,11 @@ useful, but review and accept the spec, code, and tests as one change. If the
 code violates an agreed requirement, fix the code or explicitly reconsider the
 requirement. Do not silently redefine success around what the agent produced.
 
-The spec can state the intended behavior directly: “stop waits until the child
-exits.” That requirement remains valid after implementation, so completion
-alone requires no rewrite. The starting-state section explains the original
-problem; the decisions and acceptance criteria describe the target behavior.
+The spec ships with the code and remains an active statement of requirements.
+It can say “stop waits until the child exits” before and after implementation;
+completion alone requires no rewrite. The starting-state section explains the
+original problem. The decisions and acceptance criteria remain authoritative
+until explicitly updated or superseded by a linked spec.
 
 ### Show how acceptance is tested
 
@@ -93,6 +96,12 @@ controller called `kill()` does not establish that stop waited for termination.
 A stronger test launches a controlled child and observes that it has exited
 before stop resolves. Another child can handle the signal and exit zero,
 checking that cancellation is still reported.
+
+To verify output retention, have the controlled child emit a known marker and
+remain running. Wait until the controller captures the marker, then request
+cancellation. Assert that the child has exited, the result reports cancellation,
+and the captured output still contains the marker. Synchronize on the observed
+output rather than sleeping for an assumed startup time.
 
 Keep these tests with the implementation. For a regression fix, demonstrate
 that the test detects the defective behavior. Use the real application entry
@@ -110,9 +119,11 @@ should not need the author's chat history to understand the change.
 DSH's [Agent Notes](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/README.md)
 show how to preserve design reasoning. Proposed notes include the problem,
 proposal, alternatives, acceptance criteria, and risks. DSH reserves these
-records for lasting rationale; it does not require one for every edit. Our
-proposal borrows that emphasis on reasoning while allowing the spec and code
-to arrive together without a later proposal-to-implementation rewrite.
+records for lasting rationale; it does not require one for every edit. A
+decision already made can start as an implemented note. Moving a proposed note
+to implemented requires a rewrite into its shipped form. Our proposal borrows
+the emphasis on reasoning but keeps the spec shipped with code as an active
+requirements document, with no completion-triggered change of format.
 
 A scope report can help reviewers compare the implementation with the intended
 change. DSH provides:
@@ -348,6 +359,100 @@ Hunter asks whether the accumulated repository still honors its API and
 architecture promises. That broader view can expose side effects and missed
 updates that individual reviews did not catch.
 
+## 4. Make Review a Repository-Owned Workflow
+
+A reviewer needs to evaluate more than whether the new feature works. The change
+may also violate a security rule, alter an existing API, weaken a test, or place
+behavior in the wrong component. Repeating “review carefully” in every request
+leaves the review procedure dependent on what that reviewer happens to remember.
+
+Put the procedure in a repository-owned review skill. It should locate the
+applicable rules, challenge the spec and implementation, select checks, and
+produce a report that supports an acceptance decision. Link it from the contributor instructions so
+both people and agents can find it.
+
+### Establish the scope and applicable rules
+
+Start with the exact base and reviewed revision. Include staged, unstaged, and
+untracked changes when reviewing a worktree, and record which state the evidence
+covers. Check that the required environment is available and that reported
+checks actually ran against that state. A previous green result may no longer
+apply after another edit.
+
+Then find the owning specs, affected contracts, and repository instructions.
+Follow references to security policies, architecture rules, testing guidance,
+and style configuration.
+
+DSH's [code review skill](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/skills/dsh-code-review/SKILL.md)
+uses this approach. It starts by verifying the base and head and running its
+scope report, then points reviewers to repository rules, defensive patterns,
+testing policy, and documentation standards. It prioritizes correctness,
+lifecycle, security, and required behavior over stylistic findings.
+
+### Select checks according to the change's effects
+
+The review skill is extensible: any requirement that must be validated before
+accepting a change can become part of its workflow. Keep each rule in its
+authoritative location, define when it applies and what evidence satisfies it,
+and have the skill discover and apply it. The areas below are examples, not an
+exhaustive checklist.
+
+| Area affected | What review should establish |
+| --- | --- |
+| Permissions or untrusted input | Authorization is enforced where actions run; alternate callers cannot bypass it; inputs and secrets are handled safely |
+| APIs, schemas, or stored data | Consumers remain compatible, or the proposed change and migration are justified against consumer needs and compatibility policy |
+| Shared components or dependencies | Ownership and dependency rules hold, and existing consumers still work |
+| Async work or resource ownership | Errors, cancellation, retries, and cleanup preserve the required behavior |
+| Published or user-facing behavior | Built entry paths, documentation, diagnostics, accessibility, and localization remain correct where applicable |
+| Style, types, and performance | Configured lint/type checks pass, and relevant resource or performance budgets are tested |
+
+Run mechanical checks through the repository's existing commands. Use semantic
+review for questions those commands cannot settle: whether a new abstraction
+is needed, whether a test asserts the right outcome, or whether a permission
+check can be bypassed through another path. Trace affected consumers beyond the
+edited lines.
+
+Apply the rules according to scope. A wording correction does not need a
+migration review or a new spec. An authorization change needs evidence beyond
+formatting and unit tests. If a prerequisite blocks one check, record that gap
+and continue independent checks without claiming the blocked behavior passed.
+
+### Report defects and the limits of verification
+
+A finding should identify the violated requirement, location, trigger, impact,
+and evidence. For example:
+
+```text
+Requirement: cancellation preserves captured output.
+Change: the cleanup path clears the output buffer before returning the result.
+Trigger: stop a worker after it emits output but before it completes.
+Impact: callers lose output that the worker spec promises to retain.
+Evidence: source location and a regression test reproducing the loss.
+```
+
+Review should red-team both the spec and the implementation. Look for mistaken
+assumptions, missing cases, unsafe decisions, and conflicts with existing
+contracts or policies. Code can faithfully implement a flawed spec. For
+example, a cancellation spec that permits discarding captured output deserves
+challenge if callers rely on that output to diagnose failures.
+
+An intentional behavior change needs explicit review of the changed requirement,
+its effects on consumers, and compliance with applicable policies. Updating a
+spec does not by itself justify the change. Findings can identify a defective
+requirement as well as an implementation violation; explain the concrete impact
+and supporting evidence in either case.
+
+Alongside findings, report what was checked, what failed, and what remains
+unverified. A review with no findings and missing security evidence is not
+equivalent to a completed security review.
+
+This review complements the Zombie Hunter. Review starts from a proposed diff
+and traces its effects before acceptance. The Zombie Hunter starts from ongoing
+contracts and investigates the accumulated repository state. They can share
+checkers and report conventions while covering different opportunities for
+mistakes. An agent can perform either investigation, but its conclusions still
+need evidence that a maintainer can inspect.
+
 ## A Starting Point for Further Work
 
 A minimal setup can use the repository's existing conventions:
@@ -355,6 +460,7 @@ A minimal setup can use the repository's existing conventions:
 ```text
 CONTRIBUTING.md              procedure and commands for contributors
 AGENTS.md                   links agents to the same procedure
+.agents/skills/code-review/  review workflow referencing existing policies
 docs/spec-template.md       context, goals, decisions, alternatives, acceptance
 docs/specs/                 specs with explicit replacement references
 docs/contracts/             assertions, coverage, and links to their owners
@@ -365,15 +471,17 @@ CI configuration            PR checks and scheduled contract evaluation
 ```
 
 Start with one substantive change and one important repository-wide promise.
-Deliver the change with its spec and verification. Add checks for the document
-references, then schedule an evaluation of the broader promise. Expand the
-harness when an actual gap calls for another check.
+Deliver the change with its spec and verification, and review it through the
+repository's procedure. Add checks for the document references, then schedule
+an evaluation of the broader promise. Expand the harness when an actual gap
+calls for another check.
 
 This puts [contract reconciliation](/blog/llm-application/contract-evaluation)
 into everyday development. The reports also provide observations for
 [improving the harness itself](/blog/llm-application/observability-manipulability-for-self-improving-harness).
 
-Specs explain individual changes, references preserve continuity, and the
-Zombie Hunter checks the accumulated result. Together, they give us a starting
-point for keeping quality high as code changes faster. Later posts can develop
-these practices as experience reveals what works and what is still missing.
+Specs explain individual changes, references preserve continuity, the Zombie
+Hunter checks the accumulated result, and the review skill brings the applicable
+rules into each acceptance decision. Together, they give us a starting point
+for keeping quality high as code changes faster. Later posts can develop these
+practices as experience reveals what works and what is still missing.

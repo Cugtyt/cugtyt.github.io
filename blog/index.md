@@ -12,12 +12,12 @@
 
 ## [**Towards a Repository Harness for AI Coding**](https://cugtyt.github.io/blog/llm-application/repository-harness)
 
-> Three practices towards a better repository harness: specs explain individual changes, references preserve continuity, and a recurring Zombie Hunter checks the accumulated result.
+> Four practices towards a better repository harness: specs with code, maintained references, recurring contract checks, and a repository-owned review workflow.
 
 * **Specs with Code**: Deliver the spec, implementation, and tests together; mechanical and local edits are exempt
 * **Maintained Specs**: Update existing specs or link new ones that explicitly replace the affected behavior
 * **Zombie Hunter**: Check the whole repository against API and architecture contracts to detect drift across iterations
-* **Tools to Start With**: Spec templates, documentation checks, tests, and scheduled evaluation, illustrated by DSH examples
+* **Repository-Owned Review**: Apply relevant specs, contracts, security, architecture, and style rules to each change, with evidence and verification gaps
 
 ---
 
