@@ -10,6 +10,17 @@
 
 # 最近文章：
 
+## [**Towards Repository Harness as a Service**](https://cugtyt.github.io/blog/llm-application/repository-harness-as-a-service)
+
+> The intent lifecycle drives the software lifecycle: the harness produces a concrete change, and users accept, refine, or reject it through review of the result, impact, and risks.
+
+* **Connected Lifecycles**: User intent drives specs, implementation, verification, and delivery
+* **Concrete Review**: Present the usable result and its consequences, with access to the full spec and evidence
+* **User Decisions**: Acceptance, refinement, and rejection govern what happens next
+* **Ongoing Quality**: Carry engineering evidence, active requirements, and contract checks into maintenance
+
+---
+
 ## [**Towards a Repository Harness for AI Coding**](https://cugtyt.github.io/blog/llm-application/repository-harness)
 
 > Four practices towards a better repository harness: specs with code, maintained references, recurring contract checks, and a repository-owned review workflow.
