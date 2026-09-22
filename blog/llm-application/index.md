@@ -12,6 +12,17 @@
 
 ---
 
+## [**Towards Harness RSI: Evolving the System That Does the Work**](https://cugtyt.github.io/blog/llm-application/harness-rsi)
+
+> Models, tools, skills, and workloads keep changing, so the harness must keep adapting. Feedback-driven improvement is one approach to sustaining that adaptation.
+
+* **Core Problem**: Changing dependencies require the solution to keep adapting
+* **One Approach**: Use feedback to guide bounded changes, evaluation, and adoption
+* **Coding Example**: Improve a repository review workflow, then reconsider it after an upgrade
+* **Recursive Improvement**: Improve diagnosis and experimentation while preserving independent acceptance
+
+---
+
 ## [**Towards Repository Harness as a Service**](https://cugtyt.github.io/blog/llm-application/repository-harness-as-a-service)
 
 > The intent lifecycle drives the software lifecycle: the harness produces a concrete change, and users accept, refine, or reject it through review of the result, impact, and risks.
