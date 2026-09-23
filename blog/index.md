@@ -10,6 +10,17 @@
 
 # 最近文章：
 
+## [**A Repository Harness That Learns From Its Traces**](https://cugtyt.github.io/blog/llm-application/harness-retrospective-loop)
+
+> Foreground tasks produce traces, and user replies reveal how well the result served their intent. A background retrospective uses both to test the next Git-versioned harness.
+
+* **Two Loops**: Serve the current user task, then improve the harness for later tasks
+* **Versioned Harness**: Keep skills, tools, plugins, and configuration in Git
+* **Durable Evidence**: Connect external session traces, user feedback, and harness commits
+* **Bounded Experiments**: Compare candidate and current versions, then adopt or reject
+
+---
+
 ## [**Towards Harness RSI: Evolving the System That Does the Work**](https://cugtyt.github.io/blog/llm-application/harness-rsi)
 
 > Models, tools, skills, and workloads keep changing, so the harness must keep adapting. Feedback-driven improvement is one approach to sustaining that adaptation.
