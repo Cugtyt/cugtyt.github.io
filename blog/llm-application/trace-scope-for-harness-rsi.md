@@ -43,8 +43,8 @@ This convention attaches scope to the **smallest independently
 attributable trace item**. An item may be a timed operation, an event within an
 operation, or a separately recorded input. If an item combines influences with
 different scopes, the producer emits distinguishable child items when it can
-identify them reliably. Otherwise it marks the mixed item `unknown`. A broad
-parent operation can remain unlabeled when its children carry precise labels.
+identify them reliably. A broad mixed parent can remain unlabeled when its
+children carry precise labels; the parent itself is not an edit candidate.
 
 ```text
 agent turn                         mixed; no single scope
@@ -64,13 +64,17 @@ it. A constraint may be revised by its owner in another cycle.
 
 ## Scope Is One Part of the Trace Contract
 
-The scope vocabulary has three values:
+The scope vocabulary has two values:
 
 | Improvement scope | Meaning |
 | --- | --- |
 | `in` | This loop may propose changing the item. The implementation adapter still checks authorization. |
 | `out` | This loop may use the item as context or a constraint but may not propose editing it. |
-| `unknown` | The producer cannot establish whether the item is eligible. Consumers must not assume it is `in`. |
+
+No label is different from `out`. It is expected on a mixed parent whose
+children carry scope. On an independently attributable item, a missing label
+means incomplete trace data: consumers may retain the item as context but
+must not propose changing it or infer that it is `out`.
 
 Scope says whether the improver may propose a change; the item's `kind` and
 `subject` say what it is. A user requirement, model invocation, and fixed
@@ -117,7 +121,8 @@ constraint as `in`. The minimum producer rules are:
 1. Label items individually; do not apply one scope to a mixed parent or an
    entire session.
 2. Identify an `in` component precisely enough to compare its versions.
-3. Record `unknown` when ownership or scope cannot be established.
+3. Flag a missing scope on an independently attributable item as incomplete
+   trace data; do not guess `in` or `out`.
 4. Keep item IDs and parent relationships stable so compact views can cite the
    original evidence.
 5. Include the convention and scope-boundary versions in the trace, and keep
@@ -257,8 +262,9 @@ does not edit the skill, reinterpret the requirement, or claim the model
 upgrade caused the extra searches. Another projection may omit most of this
 run and keep only comparable skill-loading and search events across runs.
 Consumers should preserve source IDs, metric names, targets, weights, and
-`unknown` labels. They should never infer `in` from a missing label or compare
-scores whose metric definitions differ without an explicit mapping.
+unlabeled mixed parents. They should flag missing scope on independently
+attributable items and never infer `in` or `out` from it. Scores whose metric
+definitions differ need an explicit mapping before comparison.
 
 The improvement stage still has work to do. A model upgrade may explain why
 an old skill is redundant. Repeated tool failures may point to a harness
