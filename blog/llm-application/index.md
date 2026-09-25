@@ -14,10 +14,10 @@
 
 ## [**Trace Scope: Connecting Observability to Manipulability**](https://cugtyt.github.io/blog/llm-application/trace-scope-for-harness-rsi)
 
-> Harnesses mark trace items `in` or `out` for improvement and attach business evaluations. Item kinds distinguish requirements, dependencies, and editable components for later projections.
+> Harnesses mark actions and inputs `in` or `out` for improvement and emit business evaluation events later in the trace. Item kinds distinguish requirements, dependencies, and editable components for later projections.
 
 * **Clear Scope**: Mark attributable items `in` or `out` within the improvement boundary
-* **Evaluation Signals**: Link multidimensional scores, ranges, directions, and rubrics to trace targets
+* **Evaluation Signals**: Emit named score events with observed values, desired targets, and optional weights
 * **Portable Projection**: Gather evidence across runs and turns into an improvement spec
 * **Harness Adapters**: Emit the shared trace and implement supported specs in each harness
 

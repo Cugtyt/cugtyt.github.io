@@ -9,13 +9,11 @@ serve its purpose, across the outcomes that matter to this application?
 
 This is the connection between the [observation and manipulation interfaces](/blog/llm-application/observability-manipulability-for-self-improving-harness).
 Observation shows what happened. Manipulation defines the action space. A
-**trace with scope and evaluation labels on its items** connects them: scope
-records each item's role in an improvement cycle, while business-specific
-evaluations record what went well or badly. Both belong to the trace item,
-even when an evaluation arrives after execution. Later processes
-can build compact views of that history, diagnose a recurring problem, and
-produce a bounded improvement specification without treating every observed
-thing as editable.
+**trace with item-level scope and evaluation events** connects them: scope
+records which observed parts may change, while evaluation events record what
+went well or badly. Later processes can build compact views of that history,
+diagnose a recurring problem, and produce a bounded improvement specification
+without treating every observed thing as editable.
 
 The [harness RSI](/blog/llm-application/harness-rsi) problem makes this useful.
 Models, tools, and workloads keep changing, so a harness must adapt. Yet a
@@ -40,11 +38,12 @@ call may combine an external model, a harness-owned prompt, and instructions
 from the user. One label for the whole call would hide the boundary we need.
 
 This convention attaches scope to the **smallest independently
-attributable trace item**. An item may be a timed operation, an event within an
-operation, or a separately recorded input. If an item combines influences with
-different scopes, the producer emits distinguishable child items when it can
-identify them reliably. A broad mixed parent can remain unlabeled when its
-children carry precise labels; the parent itself is not an edit candidate.
+attributable observed action or input**. Such an item may be a timed operation,
+an event within an operation, or a separately recorded input. If it combines
+influences with different scopes, the producer emits distinguishable child
+items when it can identify them reliably. A broad mixed parent can remain
+unlabeled when its children carry precise labels; the parent itself is not an
+edit candidate.
 
 ```text
 agent turn                         mixed; no single scope
@@ -72,14 +71,15 @@ The scope vocabulary has two values:
 | `out` | This loop may use the item as context or a constraint but may not propose editing it. |
 
 No label is different from `out`. It is expected on a mixed parent whose
-children carry scope. On an independently attributable item, a missing label
-means incomplete trace data: consumers may retain the item as context but
-must not propose changing it or infer that it is `out`.
+children carry scope and on an evaluation event that reports a score rather
+than an improvement subject. On an independently attributable action or input,
+a missing scope label means incomplete trace data: consumers may retain it as
+context but must not propose changing it or infer that it is `out`.
 
 Scope says whether the improver may propose a change; the item's `kind` and
 `subject` say what it is. A user requirement, model invocation, and fixed
-evaluation case can all be `out`, yet their kinds distinguish them. `out` does
-not mean irrelevant or omitted.
+evaluation case (a test definition) can all be `out`, yet their kinds
+distinguish them. `out` does not mean irrelevant or omitted.
 This relies on shared base kinds such as `requirement`, `model.invoke`,
 `skill.load`, `tool.call`, and `evaluation.case`. A harness may retain a more
 specific native event name, but it must map that name to a shared kind so
@@ -120,8 +120,8 @@ constraint as `in`. The minimum producer rules are:
 1. Label items individually; do not apply one scope to a mixed parent or an
    entire session.
 2. Identify an `in` component precisely enough to compare its versions.
-3. Flag a missing scope on an independently attributable item as incomplete
-   trace data; do not guess `in` or `out`.
+3. Flag a missing scope on an independently attributable action or input as
+   incomplete trace data; do not guess `in` or `out`.
 4. Keep item IDs and parent relationships stable so compact views can cite the
    original evidence.
 5. Include the convention and scope-boundary versions in the trace, and keep
@@ -133,43 +133,37 @@ These rules create one part of the interchange point. Different runtimes can
 emit items with the same meaning, without requiring readers to know how each
 runtime stores its internal conversation.
 
-## Evaluations Label the Item They Judge
+## Evaluations Are Events in the Trace
 
-An item can carry several business-specific evaluations alongside its scope.
-Each evaluation has a `name`, the observed `value`, and the desired `target`
+An evaluation is a new trace event emitted after the behavior it assesses. It
+may score a segment of work, a turn, or a complete run; a later user reaction
+can also be an evaluation event. It need not judge any one earlier item. The
+event's place in the trace supplies its run and turn context. Its own ID lets
+later views cite the score without attaching it to a skill, tool call, or
+other source item.
+
+Each event carries a `name`, the observed `value`, and the desired `target`
 value. Its optional `weight` expresses relative importance and defaults to
-`1`. The item ID already identifies what was judged; `target` is a score, not
-another item ID.
+`1`. Here `target` is a score, not an item reference. For example, after the
+searches and review finish, the harness can emit two evaluation events:
 
-For example, after observing later searches, the harness can present the
-skill item from `run-17` with its evaluation attached:
-
-```json
-{
-  "trace_id": "run-17",
-  "item_id": "42",
-  "kind": "skill.load",
-  "harness_rsi.scope": "in",
-  "harness_rsi.evaluations": [
-    {"name": "search_efficiency/v2", "value": 0.3, "target": 1.0, "weight": 2},
-    {"name": "wrong_tool_use/v1", "value": 0, "target": 0}
-  ]
-}
+```jsonl
+{"trace_id":"run-17","item_id":"45","parent_id":"turn-3","kind":"evaluation","time":"2026-09-25T09:02:00Z","harness_rsi.evaluation":{"name":"search_efficiency/v2","value":0.3,"target":1.0,"weight":2}}
+{"trace_id":"run-17","item_id":"46","parent_id":"turn-3","kind":"evaluation","time":"2026-09-25T09:02:01Z","harness_rsi.evaluation":{"name":"task_correctness/v1","value":1,"target":1}}
 ```
 
-The second evaluation uses the default weight of `1`. A metric's name
-identifies how to interpret its values; if its rubric or allowed range
-changes, the name needs a new version so consumers do not compare unlike
-scores. The `target` states the desired value, whether that is `1` for a
-successful binary check or `0` for an error count. A missing evaluation means
-*unmeasured*, not zero. Weights can guide prioritization, but no automatic
-weighted sum can replace the business owner's decision about tradeoffs.
+The second event uses the default weight of `1`. A metric's name identifies
+how to interpret its values; if its rubric or allowed range changes, the name
+needs a new version so consumers do not compare unlike scores. The `target`
+states the desired value, whether that is `1` for a successful binary check
+or `0` for an error count. A missing evaluation means *unmeasured*, not zero.
+Weights can guide prioritization, but no automatic weighted sum can replace
+the business owner's decision about tradeoffs.
 
-A user, deterministic check, business service, or model-based judge may supply
-an evaluation. A run outcome or later user reaction can be attached to its own
-item rather than forced onto the skill item. If feedback arrives after
-execution, the trace adapter associates it with the original item ID in the
-stored trace view. Its scope stays fixed; the evaluation enriches that item.
+A user, deterministic check, business service, or model-based judge may emit
+an evaluation. If feedback arrives after execution, it remains a later event
+correlated with the run. The earlier trace items and their scope labels stay
+as recorded.
 
 ## How This Extends OpenTelemetry
 
@@ -181,8 +175,8 @@ describe agent, planning, workflow, and tool operations. They offer a common
 vocabulary for **what happened**. They do not currently define whether an
 item is in the improvement scope of a particular RSI loop.
 
-An OTel producer can express this contract using custom attributes on the
-relevant span or event:
+An OTel producer can express scope using custom attributes on the relevant
+span or event:
 
 ```text
 root span:        harness_rsi.schema.version     = "2"
@@ -205,16 +199,15 @@ span ID, so a producer would give it an item ID attribute to preserve the
 source reference. The trace-level convention and boundary versions can live
 on the root span; they are not a scope label for that mixed parent.
 
-OTel's GenAI conventions also define a
+OTel's GenAI conventions define a
 [`gen_ai.evaluation.result` event](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-events.md)
-with a metric name and optional score, label, and explanation. That is a useful
-carrier for one dimension, but OTel does not define this contract's desired
-`target` or `weight`. When evaluations are known before a span ends, a producer
-can carry them as custom item attributes where structured values are
-supported. Feedback received after a span ends cannot be added to that span;
-a correlated OTel event or record can carry the item ID. The trace adapter
-attaches the evaluation to that item in the stored view. The per-item contract
-is the same in either case.
+for judging a GenAI output, normally associated with the operation that
+produced it. A score for a turn or complete run is broader. The harness can
+emit a custom `harness_rsi.evaluation` event with its own ID, `name`, `value`,
+`target`, and optional `weight`. OTel does not standardize the desired target
+or weight. If feedback arrives after the active span ends, a correlated log
+record can carry that later event. Neither transport requires assigning the
+score to one earlier operation or changing an earlier span.
 
 Granularity remains essential. An OTel model span may be `out` because the
 model is an external dependency, while a child event identifies an `in`
@@ -231,11 +224,12 @@ notice missing records or labels; absence cannot mean assumed editability.
 
 ## Projections Gather Context; They Do Not Rewrite the Trace
 
-The trace items with their scope and evaluation labels form the shared
+The scoped trace items and evaluation events form the shared
 experience record. A **projection** is a new, smaller view for a later process.
-One projector may select user constraints, tool failures, their scores, and
-the harness components involved. Another may select model-version changes
-and comparable metric values across runs. Both retain source item IDs.
+One projector may select user constraints, tool failures, related evaluations,
+and the harness components involved. Another may select model-version changes
+and comparable metric values across runs. Both retain IDs of source items and
+evaluation events.
 
 Scope and item kind can guide how much context a projection carries. It might
 keep a requirement verbatim or reference its exact original; summarize a model
@@ -252,8 +246,8 @@ Constraint: review contract v2 still satisfied          source: run-17/41
 Dependency: model-x changed to 2026-09                 source: run-17/43
 Candidate surface: repository-spec-skill v7           source: run-17/42
 Observation: repeated searches after spec was found   sources: later tool items
-Scores: task_correctness=1, target=1                  source: run outcome item
-        search_efficiency=0.3, target=1, weight=2     source: run-17/42
+Scores: task_correctness=1, target=1                  source: run-17/46
+        search_efficiency=0.3, target=1, weight=2     source: run-17/45
 ```
 
 The view gathers the context needed to investigate a redundant skill. It
@@ -262,8 +256,8 @@ upgrade caused the extra searches. Another projection may omit most of this
 run and keep only comparable skill-loading and search events across runs.
 Consumers should preserve source IDs, metric names, targets, weights, and
 unlabeled mixed parents. They should flag missing scope on independently
-attributable items and never infer `in` or `out` from it. Scores whose metric
-definitions differ need an explicit mapping before comparison.
+attributable actions or inputs and never infer `in` or `out` from it. Scores
+whose metric definitions differ need an explicit mapping before comparison.
 
 The improvement stage still has work to do. A model upgrade may explain why
 an old skill is redundant. Repeated tool failures may point to a harness
@@ -279,8 +273,8 @@ look for recurring patterns, and produce an **improvement spec**. That spec is
 an evidence-backed proposal, not an implementation patch. It identifies the
 `in` component, the suspected mechanism, the dimensions expected to improve,
 the `out` constraints to preserve, and a comparison capable of
-rejecting the proposal. Each claim points back to trace items and their
-evaluations.
+rejecting the proposal. Each claim points back to source items or evaluation
+events in the trace.
 
 For the example, it might say: under the newer model, the review skill's
 mandatory search sequence appears redundant in several runs. Try a skill
@@ -300,7 +294,7 @@ next cycle.
 
 ```yaml
 target: repository-spec-skill@7
-evidence: [run-17/42, run-21/42]
+evidence: [run-17/42, run-17/45, run-17/46, run-21/42]
 hypothesis: Mandatory searches repeat work after the relevant spec is found.
 desired_change: Skip those searches when the spec is already in context.
 predict:
@@ -338,16 +332,17 @@ trace adapter + business evaluators
 
 The [repository retrospective example](/blog/llm-application/harness-retrospective-loop)
 starts with task traces and feedback, then proposes a bounded harness change.
-This contract gives that loop two portable inputs on trace items: scope
-identifies what the harness may improve, and evaluations describe the outcomes
-that matter to the application. General projections and multi-turn diagnosis
-can turn those inputs into a reviewable improvement spec. The owning harness
-supplies the adapter that implements a supported spec and evaluates its result.
+This contract gives that loop two portable inputs in one trace: scope labels
+identify what the harness may improve, and evaluation events describe the
+outcomes that matter to the application. General projections and multi-turn
+diagnosis can turn those inputs into a reviewable improvement spec. The owning
+harness supplies the adapter that implements a supported spec and evaluates
+its result.
 
 This design is portable across harnesses. They need not share a plugin
-system, session file format, or business rubric. They need to emit items
-whose identities, relationships, scope, and evaluation meanings are clear
-to a consumer. Independent producers can implement this
+system, session file format, or business rubric. They need to emit scoped
+items and evaluation events whose identities, relationships, and meanings are
+clear to a consumer. Independent producers can implement this
 contract against different harnesses; a shared consumer can test whether their
 records agree on mixed-scope runs, delayed feedback, missing scores, and metric
 targets. Those interoperability tests are how this design can mature into a
