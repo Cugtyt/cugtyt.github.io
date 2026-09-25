@@ -101,8 +101,7 @@ for another. In format-neutral notation, a short run might look like this:
 {"trace_id":"run-17","item_id":"44","parent_id":"43","kind":"prompt.apply","time":"2026-09-25T09:00:01Z","harness_rsi.scope":"in","subject":{"id":"review-prompt","version":"4"}}
 ```
 
-These fields define a **logical contract** that any harness can emit. They are
-separate from OTel's wire format and standardized attribute names. The first
+These fields define a **logical contract** that any harness can emit. The first
 record identifies the trace's convention and scope boundary; the other
 records are individually labeled items. `subject.id`
 names what was observed or used; it is not a command to edit it. For an
@@ -164,63 +163,6 @@ A user, deterministic check, business service, or model-based judge may emit
 an evaluation. If feedback arrives after execution, it remains a later event
 correlated with the run. The earlier trace items and their scope labels stay
 as recorded.
-
-## How This Extends OpenTelemetry
-
-[OpenTelemetry traces](https://opentelemetry.io/docs/specs/otel/trace/api/) are
-made of spans with attributes and timestamped events. A span describes an
-operation; an event records an occurrence within one. The OpenTelemetry
-[GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md)
-describe agent, planning, workflow, and tool operations. They offer a common
-vocabulary for **what happened**. They do not currently define whether an
-item is in the improvement scope of a particular RSI loop.
-
-An OTel producer can express scope using custom attributes on the relevant
-span or event:
-
-```text
-root span:        harness_rsi.schema.version     = "2"
-                  harness_rsi.scope_boundary     = "coding-harness/v3"
-execute_tool span: gen_ai.operation.name         = execute_tool
-                  harness_rsi.scope              = in
-                  harness_rsi.subject.id         = spec-search-tool
-                  harness_rsi.subject.version    = "7"
-```
-
-The `harness_rsi.*` keys belong to this design; they are not standardized
-`gen_ai.*` fields. A producer using another trace format can carry the same
-logical fields; an adapter can translate them to OTel without changing their
-meaning. The item kind and subject remain available beside
-`harness_rsi.scope`, so a consumer can distinguish an `out` requirement from
-an `out` model call.
-
-On OTel spans, the span ID identifies the item. An OTel event has no separate
-span ID, so a producer would give it an item ID attribute to preserve the
-source reference. The trace-level convention and boundary versions can live
-on the root span; they are not a scope label for that mixed parent.
-
-OTel's GenAI conventions define a
-[`gen_ai.evaluation.result` event](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-events.md)
-for judging a GenAI output, normally associated with the operation that
-produced it. A score for a turn or complete run is broader. The harness can
-emit a custom `harness_rsi.evaluation` event with its own ID, `name`, `value`,
-`target`, and optional `weight`. OTel does not standardize the desired target
-or weight. If feedback arrives after the active span ends, a correlated log
-record can carry that later event. Neither transport requires assigning the
-score to one earlier operation or changing an earlier span.
-
-Granularity remains essential. An OTel model span may be `out` because the
-model is an external dependency, while a child event identifies an `in`
-prompt supplied to it. A remote response can be `out` even when its parent
-is an `in` tool operation. The span tree expresses execution relationships;
-the scope attribute expresses whether the loop may propose a change.
-
-For long runs, producers must retain the items consumers need. OTel SDKs may
-discard events beyond configured [span event limits](https://opentelemetry.io/docs/specs/otel/trace/sdk/).
-A single giant span with thousands of events is a poor durable history.
-Meaningful operations can be child spans, while dense records can remain in a
-durable event store linked to trace and span IDs. Consumers must be able to
-notice missing records or labels; absence cannot mean assumed editability.
 
 ## Projections Gather Context; They Do Not Rewrite the Trace
 
