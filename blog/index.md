@@ -10,14 +10,14 @@
 
 # 最近文章：
 
-## [**Draft: Trace Scope: Connecting Observability to Manipulability**](https://cugtyt.github.io/blog/llm-application/trace-scope-for-harness-rsi)
+## [**Trace Scope: Connecting Observability to Manipulability**](https://cugtyt.github.io/blog/llm-application/trace-scope-for-harness-rsi)
 
-> Label individual trace items as frozen, external, improvable, or unknown so any conforming harness can supply compact context to later improvement stages.
+> Harnesses label trace items by improvement scope and attach business evaluations with explicit score meaning. A general process can project that evidence into an improvement spec for a harness-specific adapter.
 
 * **Item-Level Scope**: Preserve distinct boundaries within one agent turn
-* **Portable Convention**: Give producers and consumers shared item identities and labels
-* **OpenTelemetry Extension**: Carry scope on spans or events alongside GenAI conventions
-* **Compact Views**: Project the context each stage needs, with links to source items
+* **Evaluation Signals**: Link multidimensional scores, ranges, directions, and rubrics to trace targets
+* **Portable Projection**: Gather evidence across runs and turns into an improvement spec
+* **Harness Adapters**: Emit the shared trace and implement supported specs in each harness
 
 ---
 
