@@ -12,6 +12,17 @@
 
 ---
 
+## [**Draft: Trace Scope: Connecting Observability to Manipulability**](https://cugtyt.github.io/blog/llm-application/trace-scope-for-harness-rsi)
+
+> Label individual trace items as frozen, external, improvable, or unknown so any conforming harness can supply compact context to later improvement stages.
+
+* **Item-Level Scope**: Preserve distinct boundaries within one agent turn
+* **Portable Convention**: Give producers and consumers shared item identities and labels
+* **OpenTelemetry Extension**: Carry scope on spans or events alongside GenAI conventions
+* **Compact Views**: Project the context each stage needs, with links to source items
+
+---
+
 ## [**A Repository Harness That Learns From Its Traces**](https://cugtyt.github.io/blog/llm-application/harness-retrospective-loop)
 
 > Foreground tasks produce traces, and user replies reveal how well the result served their intent. A background retrospective uses both to test the next Git-versioned harness.
