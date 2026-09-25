@@ -48,71 +48,81 @@ parent operation can remain unlabeled when its children carry precise labels.
 
 ```text
 agent turn                         mixed; no single scope
-├── user requirement               frozen
-├── repository skill               improvable
-├── model invocation               external
-│   └── harness prompt             improvable
-├── tool implementation            improvable
-└── remote service response        external
+├── user requirement               out
+├── repository skill               in
+├── model invocation               out
+│   └── harness prompt             in
+├── tool implementation            in
+└── remote service response        out
 ```
 
-Here *scope* means the item's role in **this harness improvement process**.
-It does not claim that a model or requirement can never change in another
-process. A different team may improve the model; harness RSI observes its
-version as a dependency and adapts its own components around it.
-Likewise, `frozen` means held fixed for this improvement cycle. It does not
-mean a requirement or evaluation suite can never be revised by its owner.
+Here *scope* answers one question: **may this harness improvement loop propose
+changing this item?** It does not claim that a model or requirement can never
+change in another process. A different team may improve the model; harness
+RSI observes its version as a dependency and adapts its own components around
+it. A constraint may be revised by its owner in another cycle.
 
 ## Scope Is One Part of the Trace Contract
 
-The scope vocabulary has four values:
+The scope vocabulary has three values:
 
-| Scope | Meaning to a harness improver |
+| Improvement scope | Meaning |
 | --- | --- |
-| `frozen` | A requirement, constraint, or evaluation condition to preserve for the current improvement cycle. |
-| `external` | A dependency the harness can observe and adapt to but cannot edit through this loop. |
-| `improvable` | A harness-owned component or procedure that this loop may propose changing. |
-| `unknown` | The producer cannot establish the boundary; later stages must not assume editability. |
+| `in` | This loop may propose changing the item. The implementation adapter still checks authorization. |
+| `out` | This loop may use the item as context or a constraint but may not propose editing it. |
+| `unknown` | The producer cannot establish whether the item is eligible. Consumers must not assume it is `in`. |
+
+Scope says whether the improver may propose a change; the item's `kind` and
+`subject` say what it is. A user requirement, model invocation, and fixed
+evaluation case can all be `out`, but a projector can treat them differently
+because their kinds differ. `out` does not mean irrelevant or omitted.
+This relies on shared base kinds such as `requirement`, `model.invoke`,
+`skill.load`, `tool.call`, and `evaluation.case`. A harness may retain a more
+specific native event name, but it must map that name to a shared kind before
+a generic projector can apply kind-specific rules. Without that mapping,
+`scope: out` alone would not tell the projector what context to preserve.
 
 Each labeled item needs a stable identity, a kind, its place in the run, and a
 scope. An identifiable subject and version make the label useful across runs.
 The trace also identifies the convention version and the declared improvement
 boundary under which its labels were assigned. Scope is relative to that
-boundary: the same component may be external to one harness and improvable by
-another. In format-neutral notation, a short run might look like this:
+boundary: the same component may be out of scope for one harness and in scope
+for another. In format-neutral notation, a short run might look like this:
 
 ```jsonl
-{"trace_id":"run-17","schema_version":"1","scope_boundary":"coding-harness/v3"}
-{"trace_id":"run-17","item_id":"41","parent_id":"turn-3","kind":"requirement","time":"2026-09-25T09:00:00Z","scope":"frozen","subject":{"id":"review-contract","version":"2"}}
-{"trace_id":"run-17","item_id":"42","parent_id":"turn-3","kind":"skill.load","time":"2026-09-25T09:00:00Z","scope":"improvable","subject":{"id":"repository-spec-skill","version":"7"}}
-{"trace_id":"run-17","item_id":"43","parent_id":"turn-3","kind":"model.invoke","time":"2026-09-25T09:00:01Z","scope":"external","subject":{"id":"model-x","version":"2026-09"}}
-{"trace_id":"run-17","item_id":"44","parent_id":"43","kind":"prompt.apply","time":"2026-09-25T09:00:01Z","scope":"improvable","subject":{"id":"review-prompt","version":"4"}}
+{"trace_id":"run-17","schema_version":"2","scope_boundary":"coding-harness/v3"}
+{"trace_id":"run-17","item_id":"41","parent_id":"turn-3","kind":"requirement","time":"2026-09-25T09:00:00Z","scope":"out","subject":{"id":"review-contract","version":"2"}}
+{"trace_id":"run-17","item_id":"42","parent_id":"turn-3","kind":"skill.load","time":"2026-09-25T09:00:00Z","scope":"in","subject":{"id":"repository-spec-skill","version":"7"}}
+{"trace_id":"run-17","item_id":"43","parent_id":"turn-3","kind":"model.invoke","time":"2026-09-25T09:00:01Z","scope":"out","subject":{"id":"model-x","version":"2026-09"}}
+{"trace_id":"run-17","item_id":"44","parent_id":"43","kind":"prompt.apply","time":"2026-09-25T09:00:01Z","scope":"in","subject":{"id":"review-prompt","version":"4"}}
 ```
 
 These fields define a **logical contract** that any harness can emit. They are
 separate from OTel's wire format and standardized attribute names. The first
-record identifies the trace's convention and scope
-boundary; the other records are individually labeled items. `subject.id`
+record identifies the trace's convention and scope boundary; the other
+records are individually labeled items. `subject.id`
 names what was observed or used; it is not a command to edit it. For an
-`improvable` item, the ID should resolve to a
-versioned harness component. Otherwise the retrospective could diagnose a
+`in` item, the ID should resolve to a versioned harness component.
+Otherwise the retrospective could diagnose a
 problem but not name a candidate change.
 
 The producer applies a declared improvement boundary when it records an item.
 That boundary should come from the harness owner's configuration, not from a
-model's judgment about its own result. A scope label describes the source
-item; it is not a grant of permission to edit the named subject. The agent's
-later interpretation of a failure must not silently relabel a frozen
-requirement as improvable. The minimum producer rules are:
+model's judgment about its own result. An improvement-scope label describes
+the source item; it is not a grant of permission to edit the named subject.
+The agent's later interpretation of a failure must not silently relabel a
+constraint as `in`. The minimum producer rules are:
 
 1. Label items individually; do not apply one scope to a mixed parent or an
    entire session.
-2. Identify an improvable component precisely enough to compare its versions.
+2. Identify an `in` component precisely enough to compare its versions.
 3. Record `unknown` when ownership or scope cannot be established.
 4. Keep item IDs and parent relationships stable so compact views can cite the
    original evidence.
 5. Include the convention and scope-boundary versions in the trace, and keep
    labels attached when exporting the trace to another format.
+6. Keep the item's kind and subject when exporting it; do not discard an
+   `out` item merely because this loop cannot change it.
 
 These rules create one part of the interchange point. Different runtimes can
 emit items with the same meaning, and a downstream projector need not know how
@@ -172,23 +182,27 @@ operation; an event records an occurrence within one. The OpenTelemetry
 [GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md)
 describe agent, planning, workflow, and tool operations. They offer a common
 vocabulary for **what happened**. They do not currently define whether an
-item is frozen or improvable in a particular RSI loop.
+item is in the improvement scope of a particular RSI loop.
 
 An OTel producer can express this contract using custom attributes on the
 relevant span or event:
 
 ```text
-gen_ai.operation.name       = execute_tool       # existing GenAI vocabulary
-harness_rsi.scope           = improvable         # this convention's extension
-harness_rsi.subject.id      = spec-search-tool    # this convention's extension
-harness_rsi.subject.version = "7"                # this convention's extension
-harness_rsi.schema.version  = "1"                # this convention's extension
+root span:        harness_rsi.schema.version     = "2"
+                  harness_rsi.scope_boundary     = "coding-harness/v3"
+execute_tool span: gen_ai.operation.name         = execute_tool
+                  harness_rsi.scope              = in
+                  harness_rsi.subject.id         = spec-search-tool
+                  harness_rsi.subject.version    = "7"
 ```
 
 The `harness_rsi.*` keys belong to this design; they are not standardized
 `gen_ai.*` fields. A producer using another trace format can carry the same
 logical fields; an adapter can translate them to OTel without changing their
-meaning.
+meaning. The item kind and subject remain available beside
+`harness_rsi.scope`, so a consumer can distinguish an `out` requirement from
+an `out` model call.
+
 On OTel spans, the span ID identifies the item. An OTel event has no separate
 span ID, so a producer would give it an item ID attribute to preserve the
 source reference. The trace-level convention and boundary versions can live
@@ -205,11 +219,11 @@ producer cannot add an event to that ended span. It needs a new correlated
 record or span linked to the target. The logical evaluation record retains
 the same target ID regardless of its transport.
 
-Granularity remains essential. An OTel model span may identify the external
-model while a child event identifies the improvable prompt supplied to it.
-An external response can carry `external` even when its parent is a
-harness-owned tool operation. The span tree expresses execution relationships;
-the scope attribute expresses the improvement boundary.
+Granularity remains essential. An OTel model span may be `out` because the
+model is an external dependency, while a child event identifies an `in`
+prompt supplied to it. A remote response can be `out` even when its parent
+is an `in` tool operation. The span tree expresses execution relationships;
+the scope attribute expresses whether the loop may propose a change.
 
 For long runs, producers must retain the items consumers need. OTel SDKs may
 discard events beyond configured [span event limits](https://opentelemetry.io/docs/specs/otel/trace/sdk/).
@@ -227,10 +241,10 @@ components involved. Another may select model-version changes and comparable
 metric values across runs. Both retain references to source item and
 evaluation IDs.
 
-Scope can guide how much context a projection carries. It might keep a frozen
-requirement verbatim or reference its exact original; summarize an external
+Scope and item kind can guide how much context a projection carries. It might
+keep a requirement verbatim or reference its exact original; summarize a model
 call by provider, version, outcome, and error; and keep more diagnostic detail
-around an improvable tool or skill. Those are projection choices, not changes
+around an `in` tool or skill. Those are projection choices, not changes
 to the source trace or decisions to modify the harness. If the compact view
 omits a detail needed for diagnosis, the source reference lets the next stage
 inspect the original item.
@@ -251,7 +265,7 @@ does not edit the skill, reinterpret the requirement, or claim the model
 upgrade caused the extra searches. Another projection may omit most of this
 run and keep only comparable skill-loading and search events across runs.
 Consumers should preserve source IDs, score definitions, and `unknown` labels.
-They should never infer `improvable` from a missing label or compare two scores
+They should never infer `in` from a missing label or compare two scores
 whose rubric versions or directions differ without an explicit mapping.
 
 The improvement stage still has work to do. A model upgrade may explain why
@@ -266,8 +280,8 @@ remain necessary.
 The general part of harness RSI can read projections across runs and turns,
 look for recurring patterns, and produce an **improvement spec**. That spec is
 an evidence-backed proposal, not an implementation patch. It identifies the
-improvable component, the suspected mechanism, the dimensions expected to
-improve, the frozen conditions to preserve, and a comparison capable of
+`in` component, the suspected mechanism, the dimensions expected to improve,
+the `out` constraints to preserve, and a comparison capable of
 rejecting the proposal. Each claim points back to trace items or evaluations.
 
 For the example, it might say: under the newer model, the review skill's
@@ -301,7 +315,7 @@ compare: Fresh tasks from matched starting states under the same model and rubri
 This is an illustrative spec, not a command format. The generic process can
 produce it from evidence. Only the adapter knows whether
 `repository-spec-skill@7` is a file, a plugin setting, or another harness
-surface, and how to build the candidate without touching the frozen contract.
+surface, and how to build the candidate without changing the `out` contract.
 
 ```text
 trace adapter + business evaluators
