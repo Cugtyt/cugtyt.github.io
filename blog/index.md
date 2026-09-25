@@ -16,7 +16,7 @@
 
 * **Clear Scope**: Mark attributable items `in` or `out` within the improvement boundary
 * **Evaluation Signals**: Emit named score events with observed values, desired targets, and optional weights
-* **Portable Projection**: Gather evidence across runs and turns into an improvement spec
+* **Portable Projection**: Compact trace context for a later improvement-spec proposal
 * **Harness Adapters**: Emit the shared trace and implement supported specs in each harness
 
 ---

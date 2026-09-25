@@ -160,46 +160,42 @@ Weights can guide prioritization, but no automatic weighted sum can replace
 the business owner's decision about tradeoffs.
 
 A user, deterministic check, business service, or model-based judge may emit
-an evaluation. If feedback arrives after execution, it remains a later event
-correlated with the run. The earlier trace items and their scope labels stay
-as recorded.
+an evaluation. The evaluator may use the full task context, trace, and business
+intent to assign a score; the event records the outcome, not its internal
+scoring instructions. If feedback arrives after execution, it remains a later
+event correlated with the run. The earlier trace items and their scope labels
+stay as recorded.
 
 ## Projections Gather Context; They Do Not Rewrite the Trace
 
 The scoped trace items and evaluation events form the shared
-experience record. A **projection** is a new, smaller view for a later process.
-One projector may select user constraints, tool failures, related evaluations,
-and the harness components involved. Another may select model-version changes
-and comparable metric values across runs. Both retain IDs of source items and
-evaluation events.
+experience record. A **projection** is a smaller context view of that trace
+for the later spec proposal stage. It keeps the event order, source IDs, scope
+labels, and evaluation values needed for that stage, while replacing bulky
+payloads with `[compacted]`. The source trace remains available through those
+IDs if the proposal stage needs the original content.
 
-Scope and item kind can guide how much context a projection carries. It might
-keep a requirement verbatim or reference its exact original; summarize a model
-call by provider, version, outcome, and error; and keep more diagnostic detail
-around an `in` tool or skill. Those are projection choices, not changes
-to the source trace or decisions to modify the harness. If the compact view
-omits a detail needed for diagnosis, the source reference lets the next stage
-inspect the original item.
-
-For the model-upgrade example, a retrospective view might be only:
+For the model-upgrade scenario, a compact view of a fuller trace could be:
 
 ```text
-Constraint: review contract v2 still satisfied          source: run-17/41
-Dependency: model-x changed to 2026-09                 source: run-17/43
-Candidate surface: repository-spec-skill v7           source: run-17/42
-Observation: repeated searches after spec was found   sources: later tool items
-Scores: task_correctness=1, target=1                  source: run-17/46
-        search_efficiency=0.3, target=1, weight=2     source: run-17/45
+run-17/41  requirement       out  review contract v2
+run-17/42  skill.load        in   repository-spec-skill@7: mandatory searches
+run-17/43  model.invoke      out  model-x@2026-09: [compacted]
+run-17/s1  tool.call         in   spec-search-tool: search("review spec")
+run-17/r1  service.response  out  [compacted]
+run-17/s2  tool.call         in   spec-search-tool: search("review spec")
+run-17/r2  service.response  out  [compacted]
+run-17/45  evaluation             search_efficiency/v2 value=0.3 target=1 weight=2
+run-17/46  evaluation             task_correctness/v1 value=1 target=1
 ```
 
-The view gathers the context needed to investigate a redundant skill. It
-does not edit the skill, reinterpret the requirement, or claim the model
-upgrade caused the extra searches. Another projection may omit most of this
-run and keep only comparable skill-loading and search events across runs.
-Consumers should preserve source IDs, metric names, targets, weights, and
-unlabeled mixed parents. They should flag missing scope on independently
-attributable actions or inputs and never infer `in` or `out` from it. Scores
-whose metric definitions differ need an explicit mapping before comparison.
+This view keeps the sequence and the score events without deciding whether
+the skill or model caused the repeated searches. The spec proposal stage can
+inspect `run-17/r1` and `run-17/r2` if their compacted content matters. A
+projection may retain more or less context for a particular task, but it
+must keep source IDs and never silently turn a missing scope label into `in`
+or `out`. Scores whose metric definitions differ need an explicit mapping
+before comparison.
 
 The improvement stage still has work to do. A model upgrade may explain why
 an old skill is redundant. Repeated tool failures may point to a harness
@@ -211,45 +207,46 @@ remain necessary.
 ## From Projections to a Portable Improvement Spec
 
 The general part of harness RSI can read projections across runs and turns,
-look for recurring patterns, and produce an **improvement spec**. That spec is
-an evidence-backed proposal, not an implementation patch. It identifies the
-`in` component, the suspected mechanism, the dimensions expected to improve,
-the `out` constraints to preserve, and a comparison capable of
-rejecting the proposal. Each claim points back to source items or evaluation
-events in the trace.
+look for recurring patterns, and produce an **improvement spec** with three
+parts: **issue** describes the observed problem and suspected cause;
+**proposal** names the `in` component and change to try; **predict** states
+what should improve and what must remain satisfied. Source references belong
+beside the claims they support, within these parts. The spec proposes a testable
+change; it is not an implementation patch or a copy of the evaluator's scoring
+logic.
 
-For the example, it might say: under the newer model, the review skill's
-mandatory search sequence appears redundant in several runs. Try a skill
-version that skips searches once the relevant spec is already in context.
-Predict higher `search_efficiency` without reducing `task_correctness` or
-violating the review contract. The spec must also cite runs that contradict
-the hypothesis. One low score or one model upgrade is not enough to establish
-the mechanism.
+**Issue.** Under model-x@2026-09 (`run-17/43`), repository-spec-skill@7 still
+requires searches (`run-17/42`). After the relevant spec appeared in the
+first result (`run-17/r1`), another search followed (`run-17/s2`). The
+`search_efficiency/v2` score was 0.3 against a target of 1 (`run-17/45`),
+while `task_correctness/v1` met its target (`run-17/46`). This suggests that
+the skill's mandatory search step may now add avoidable work.
+
+**Proposal.** Try a new version of repository-spec-skill@7 (`run-17/42`) that
+skips the mandatory search when the relevant spec is already in context.
+Preserve the review contract v2 (`run-17/41`).
+
+**Predict.** On fresh tasks from matched starting states under the same model,
+the new skill should improve `search_efficiency/v2` (`run-17/45`) without
+reducing `task_correctness/v1` (`run-17/46`) or violating the review contract
+(`run-17/41`). A comparison with the baseline should be able to reject this
+prediction. One low score or one model upgrade is not enough to establish the
+cause; other runs may contradict it.
 
 The shared process stops at this portable spec. A **harness-specific
 implementation adapter** maps the component ID to its real skill, tool, or
 configuration, checks that the proposed change is supported and authorized,
 and constructs a candidate. It may reject an unsupported spec with a reason.
-The evaluator then compares that candidate with a baseline under compatible
-rubrics and fixed conditions. The outcome becomes new evidence for the
-next cycle.
+Only the adapter knows whether `repository-spec-skill@7` is a file, a plugin
+setting, or another harness surface, and how to build the candidate without
+changing the `out` contract.
 
-```yaml
-target: repository-spec-skill@7
-evidence: [run-17/42, run-17/45, run-17/46, run-21/42]
-hypothesis: Mandatory searches repeat work after the relevant spec is found.
-desired_change: Skip those searches when the spec is already in context.
-predict:
-  search_efficiency: increase under rubric v2
-  task_correctness: no decrease under rubric v1
-preserve: [review-contract@2]
-compare: Fresh tasks from matched starting states under the same model and rubrics.
-```
-
-This is an illustrative spec, not a command format. The generic process can
-produce it from evidence. Only the adapter knows whether
-`repository-spec-skill@7` is a file, a plugin setting, or another harness
-surface, and how to build the candidate without changing the `out` contract.
+An independent evaluator then compares the candidate with a baseline using
+the same evaluator version and matched task conditions. The proposal process
+receives score events and task constraints, not the evaluator's internal
+scoring instructions; that separation reduces the chance of optimizing for a
+disclosed checklist instead of the intended outcome. The result becomes new
+evidence for the next cycle.
 
 ```text
 trace adapter + business evaluators
@@ -258,7 +255,10 @@ trace adapter + business evaluators
        standard experience
               |
               v
-   general projection and diagnosis
+       compact trace projection
+              |
+              v
+      diagnosis and spec proposal
               |
               v
        improvement spec
