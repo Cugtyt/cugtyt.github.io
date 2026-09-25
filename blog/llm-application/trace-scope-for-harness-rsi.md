@@ -78,14 +78,13 @@ must not propose changing it or infer that it is `out`.
 
 Scope says whether the improver may propose a change; the item's `kind` and
 `subject` say what it is. A user requirement, model invocation, and fixed
-evaluation case can all be `out`, but a projector can treat them differently
-because their kinds differ. `out` does not mean irrelevant or omitted.
+evaluation case can all be `out`, yet their kinds distinguish them. `out` does
+not mean irrelevant or omitted.
 This relies on shared base kinds such as `requirement`, `model.invoke`,
 `skill.load`, `tool.call`, and `evaluation.case`. A harness may retain a more
-specific native event name, but it must map that name to a shared kind before
-a generic projector can apply kind-specific rules. Without that mapping,
-`harness_rsi.scope: out` alone would not tell the projector what context to
-preserve.
+specific native event name, but it must map that name to a shared kind so
+readers of the trace can interpret it consistently. Without that mapping,
+`harness_rsi.scope: out` alone would not say what the item represents.
 
 Each labeled item needs a stable identity, a kind, its place in the run, and a
 scope. An identifiable subject and version make the label useful across runs.
@@ -131,8 +130,8 @@ constraint as `in`. The minimum producer rules are:
    `out` item merely because this loop cannot change it.
 
 These rules create one part of the interchange point. Different runtimes can
-emit items with the same meaning, and a downstream projector need not know how
-each runtime stores its internal conversation.
+emit items with the same meaning, without requiring readers to know how each
+runtime stores its internal conversation.
 
 ## Evaluations Label the Item They Judge
 
