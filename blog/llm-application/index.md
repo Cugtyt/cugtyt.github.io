@@ -12,6 +12,18 @@
 
 ---
 
+## [**A Callable Dreaming Framework: From Traces to Improvement Specs**](https://cugtyt.github.io/blog/llm-application/callable-dreaming-framework)
+
+> A passive trace-to-spec block compacts labeled sessions in parallel, proposes a change across sessions, and evaluates the candidate against the traces before returning a reviewable improvement spec.
+
+* **Callable Boundary**: The host supplies the goal and traces and decides when to run
+* **Parallel Sessions**: Compact and inspect each session while preserving source references
+* **Stage Overrides**: Replace any named stage's logic while keeping shared trace and spec contracts
+* **Spec Evaluation**: Check expected gains and constraints against the trace evidence
+* **Spec Output**: Return Issue, Proposal, and Predict, or a cited no-proposal decision
+
+---
+
 ## [**Trace Scope: Connecting Observability to Manipulability**](https://cugtyt.github.io/blog/llm-application/trace-scope-for-harness-rsi)
 
 > Harnesses mark actions and inputs `in` or `out` for improvement and emit business evaluation events later in the trace. Item kinds distinguish requirements, dependencies, and editable components for later projections.
