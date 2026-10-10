@@ -1,5 +1,13 @@
 # Observability and Manipulability: The Eyes and Hands of Self-Improving Harnesses
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 > **The core work of designing a self-improving harness is defining its
 > observation and manipulation interfaces.** Observability lets the improvement
 > mechanism find the right target. Manipulability gives it an action space in

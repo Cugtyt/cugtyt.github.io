@@ -1,5 +1,13 @@
 # Towards Repository Harness as a Service
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 A user opens an issue: “Our team needs a shared equipment booking page. People
 should be able to reserve a device, see when it is available, and cancel their
 own reservations.”

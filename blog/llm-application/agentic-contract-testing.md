@@ -1,5 +1,13 @@
 # Agentic Contract Testing: Making Project Intent Executable
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 > TL;DR: An agentic contract test is a small, human-readable project promise. A human defines what must be true and what coverage is required to justify a result. An agent chooses how to investigate, while a harness controls execution. The output is a structured report whose passes are coverage-backed and whose failures are evidence-backed.
 
 A project may promise that every administrative operation is authenticated, authorized, and audited. That promise can span routes, middleware, configuration, and runtime behavior. It is too broad for one unit test, but “ask an agent to review the repository” is too vague for CI.

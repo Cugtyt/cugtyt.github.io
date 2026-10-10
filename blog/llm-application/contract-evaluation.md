@@ -1,5 +1,13 @@
 # From Code Generation to Contract Reconciliation
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 > TL;DR: AI coding makes implementation cheap, but generation alone is an open
 > loop. Code changes from humans, agents, generated code, fixes, and refactors,
 > while contracts are often weakly enforced. Contract evaluation acts as the

@@ -1,5 +1,13 @@
 # Towards Harness RSI: Evolving the System That Does the Work
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 A repository harness captures what we have learned about working with coding
 agents. We add specs because intent gets lost, skills because useful procedures
 repeat, tools because information is difficult to reach, and review workflows

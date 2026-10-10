@@ -1,5 +1,13 @@
 # Archive and Link: The Core of Agent Context Management
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 > **Agent context management has two core responsibilities: archive past
 > context into durable, manipulable artifacts, and link the current context
 > to the relevant parts of that archive.** Session compaction and memory

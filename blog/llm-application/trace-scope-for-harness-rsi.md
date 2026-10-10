@@ -1,5 +1,13 @@
 # Trace Scope: Connecting Observability to Manipulability
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 An agent receives a requirement, loads a skill, calls a model, invokes a tool,
 and reads an external service's response. A trace may record every step. But a
 retrospective that wants to improve the agent's harness needs two more kinds

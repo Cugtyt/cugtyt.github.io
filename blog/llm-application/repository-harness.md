@@ -1,5 +1,13 @@
 # Towards a Repository Harness for AI Coding
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 An AI coding agent can produce a large patch before a reviewer has finished
 understanding the requirement. If the code, tests, and documentation all follow
 the same mistaken assumption, the result can look complete while doing the

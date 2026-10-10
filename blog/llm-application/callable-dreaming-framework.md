@@ -1,5 +1,13 @@
 # A Callable Dreaming Framework: From Traces to Improvement Specs
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 A harness can record what an agent did without knowing what should change.
 Long traces contain requirements, external dependencies, harness-owned
 components, tool results, and feedback in the same history. Reading every run

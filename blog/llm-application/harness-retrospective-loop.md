@@ -1,5 +1,13 @@
 # A Repository Harness That Learns From Its Traces
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 A user asks a coding agent to add reservation cancellation. The patch passes
 the available tests. The user then replies: “I can cancel someone else's
 reservation.” The test result and the user's experience disagree. To improve

@@ -1,5 +1,13 @@
 # File-Based Orchestration for AI Agent Delegation
 
+## Contact Me
+
+- Blog: <https://cugtyt.github.io/blog/llm-application/index>
+- Email: <cugtyt@qq.com>
+- GitHub: [Cugtyt@GitHub](https://github.com/Cugtyt)
+
+---
+
 When delegating work from one AI agent to another, the hard part is often not
 the task itself. The hard part is coordination.
 
