@@ -10,6 +10,17 @@
 
 # 最近文章：
 
+## [**Two Signals for Harness RSI: Verifiable Outcomes and Personal Preferences**](https://cugtyt.github.io/blog/llm-application/signals-for-harness-rsi)
+
+> Harness RSI needs feedback about both task performance and the individual user. Verifiable outcomes guide execution improvements; instructions, corrections, and reactions help uncover personal preferences.
+
+* **Verifiable Outcomes**: Evaluate results against defined criteria and their coverage
+* **Personal Preferences**: Learn what suits one user in a particular context
+* **Signal Mining**: Interpret feedback with evidence, scope, and uncertainty
+* **Recursive Improvement**: Improve how the harness learns preferences as well as how it performs tasks
+
+---
+
 ## [**A Callable Dreaming Framework: From Traces to Improvement Specs**](https://cugtyt.github.io/blog/llm-application/callable-dreaming-framework)
 
 > A passive trace-to-spec block compacts labeled sessions in parallel, proposes a change across sessions, and evaluates the candidate against the traces before returning a reviewable improvement spec.
