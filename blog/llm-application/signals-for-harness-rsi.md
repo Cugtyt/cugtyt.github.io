@@ -134,6 +134,35 @@ concise status reports" retains more meaning than "likes short answers." It
 should remain connected to the evidence that produced it, so later feedback can
 correct it.
 
+## Product Design Can Make Hidden Preferences Easier to Observe
+
+An improvement loop can learn from the feedback users happen to provide. Product
+design can also create natural opportunities for users to reveal their intent
+and preferences as they work. A concrete suggestion gives the user something
+to accept or revise, making their choice easier to interpret than a general
+reaction to a long response.
+
+For example, Codex's
+[composer predictions](https://help.openai.com/en/articles/20001601-composer-predictions-in-codex)
+suggest a next message. The user can press Tab to insert the suggestion, edit
+it, and then send it. Accepting the prediction does not send it automatically.
+This interaction could provide useful evidence for a harness improvement loop:
+sending the suggestion unchanged supports its fit to the user's immediate
+intent, while edits before sending reveal where the prediction needed to change.
+
+The interpretation still has limits. A user may accept a suggestion because it
+saves typing, and an ignored suggestion may simply have gone unnoticed. A
+single acceptance does not establish a lasting preference. The useful evidence
+is the suggestion, its context, and what the user ultimately chose to send.
+This is a possible use of the interaction for RSI, rather than a claim that
+Codex currently uses these actions for personal harness improvement.
+
+The broader design opportunity is to make feedback a small, useful part of
+ordinary work. Users can reveal preferences by choosing, editing, or confirming
+concrete options, without having to write a separate explanation of everything
+they want. Harness RSI can then use those observations to form and test better
+supported preference hypotheses.
+
 ## From a Reaction to a Harness Change
 
 The [repository retrospective loop](/blog/llm-application/harness-retrospective-loop)
