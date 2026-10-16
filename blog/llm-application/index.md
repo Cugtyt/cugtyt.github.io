@@ -12,6 +12,17 @@
 
 ---
 
+## [**Personal Modeling Through Models and Harnesses**](https://cugtyt.github.io/blog/llm-application/personal-modeling)
+
+> A model and personal harness can form an evolving representation of an individual. Validated populations of these agents could help explore needs, recommendations, advertising, and work.
+
+* **Personal Fit**: Adapt capabilities to a person's goals, preferences, and constraints
+* **Person Models**: Combine model capabilities, personal context, and working procedures
+* **Virtual Populations**: Explore demand and group behavior through explicit scenarios and interactions
+* **Practical Applications**: Investigate recommendation, advertising, and labor with real outcome validation
+
+---
+
 ## [**Two Signals for Harness RSI: Verifiable Outcomes and Personal Preferences**](https://cugtyt.github.io/blog/llm-application/signals-for-harness-rsi)
 
 > Harness RSI needs feedback about both task performance and the individual user. Verifiable outcomes guide execution improvements; instructions, corrections, and reactions help uncover personal preferences.
